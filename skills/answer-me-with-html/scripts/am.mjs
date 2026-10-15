@@ -30,7 +30,7 @@ var init_temml = __esm({
 
 // src/cli.js
 import { parseArgs } from "node:util";
-import { readFileSync as readFileSync9, writeFileSync as writeFileSync7, mkdirSync as mkdirSync4, existsSync as existsSync6, rmSync as rmSync7 } from "node:fs";
+import { readFileSync as readFileSync9, writeFileSync as writeFileSync7, mkdirSync as mkdirSync4, existsSync as existsSync7, rmSync as rmSync7 } from "node:fs";
 
 // src/assets.js
 var VERSION = "0.5.3";
@@ -1296,7 +1296,7 @@ var VIDEO_EXPORT_JS = "// The export engine for the path that has no ffmpeg: the
 var VIDEO_MUX_JS = "// Minimal WebM (Matroska) writer for the export path that has no ffmpeg: the browser encodes the frames (WebCodecs,\n// see src/runtime/video.js) and this module writes the container. One VP8/VP9 video track and an optional Opus audio\n// track. The blocks are buffered, sorted by time and cut into clusters of about a second, so the sound and the\n// picture of a moment sit next to each other in the file. The Segment and the Clusters carry the unknown size, which\n// is how a stream is written: nothing needs to be measured first and nothing is patched afterwards.\n// Plain bytes only (no Buffer, no imports), so the same source runs in Node and inside a page (scripts/inline-assets.mjs\n// turns it into a script for the player page).\nconst APP = 'answer-me-with-html';   // MuxingApp / WritingApp\nconst CLUSTER_MS = 1000;              // how much time one cluster holds\nconst SEEK_PRE_ROLL_NS = 80_000_000;  // what the Opus specification asks for\n\nconst ID = {\n  EBML: [0x1a, 0x45, 0xdf, 0xa3],\n  EBMLVersion: [0x42, 0x86], EBMLReadVersion: [0x42, 0xf7], EBMLMaxIDLength: [0x42, 0xf2], EBMLMaxSizeLength: [0x42, 0xf3],\n  DocType: [0x42, 0x82], DocTypeVersion: [0x42, 0x87], DocTypeReadVersion: [0x42, 0x85],\n  Segment: [0x18, 0x53, 0x80, 0x67], Info: [0x15, 0x49, 0xa9, 0x66], TimecodeScale: [0x2a, 0xd7, 0xb1],\n  MuxingApp: [0x4d, 0x80], WritingApp: [0x57, 0x41], Duration: [0x44, 0x89],\n  Tracks: [0x16, 0x54, 0xae, 0x6b], TrackEntry: [0xae], TrackNumber: [0xd7], TrackUID: [0x73, 0xc5], FlagLacing: [0x9c],\n  CodecID: [0x86], TrackType: [0x83], Video: [0xe0], PixelWidth: [0xb0], PixelHeight: [0xba],\n  Audio: [0xe1], SamplingFrequency: [0xb5], Channels: [0x9f], CodecPrivate: [0x63, 0xa2],\n  CodecDelay: [0x56, 0xaa], SeekPreRoll: [0x56, 0xbb],\n  Cluster: [0x1f, 0x43, 0xb6, 0x75], Timecode: [0xe7], SimpleBlock: [0xa3],\n};\nconst UNKNOWN_SIZE = new Uint8Array([0x01, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff]);\n\nconst concat = (parts) => {\n  let total = 0;\n  for (const p of parts) total += p.length;\n  const out = new Uint8Array(total);\n  let at = 0;\n  for (const p of parts) { out.set(p, at); at += p.length; }\n  return out;\n};\nconst bytes = (id) => new Uint8Array(id);\nconst text = (s) => new TextEncoder().encode(s);\n\n// Element size as a variable-size integer, in the shortest length that fits; the all-ones value is reserved.\nfunction size(n) {\n  for (let len = 1; len <= 8; len++) {\n    if (len === 8 || n < 2 ** (7 * len) - 1) {\n      const out = new Uint8Array(len);\n      let v = n;\n      for (let i = len - 1; i >= 0; i--) {\n        out[i] = v & 0xff;\n        v = Math.floor(v / 256);\n      }\n      out[0] |= 0x80 >> (len - 1);\n      return out;\n    }\n  }\n}\n\n// Unsigned integer, big endian, as short as it can be (a Matroska integer drops leading zero bytes).\nfunction uint(n) {\n  const out = [];\n  let v = Math.round(n);\n  do {\n    out.unshift(v & 0xff);\n    v = Math.floor(v / 256);\n  } while (v > 0);\n  return new Uint8Array(out);\n}\n\nfunction f64(x) {\n  const out = new Uint8Array(8);\n  new DataView(out.buffer).setFloat64(0, x);\n  return out;\n}\n\nconst elem = (id, payload) => concat([bytes(id), size(payload.length), payload]);\n\n// WebM writer. video: { width, height, codec } with codec 'V_VP9' or 'V_VP8'; audio: null or\n// { channels, codecPrivate, preSkipSamples }. Duration is written up front, so a player knows the length at once.\nclass WebmWriter {\n  constructor({ width, height, durationMs, videoCodec = 'V_VP9', audio = null }) {\n    this.width = width;\n    this.height = height;\n    this.durationMs = durationMs;\n    this.videoCodec = videoCodec;\n    this.audio = audio;\n    this.blocks = [];\n  }\n\n  // track 1 is the picture, track 2 the sound. key marks a key frame; tsUs is the time in microseconds.\n  block({ track, key, tsUs, data }) {\n    this.blocks.push({ track, key: Boolean(key), ms: Math.round(tsUs / 1000), data });\n  }\n\n  count(track) {\n    return this.blocks.reduce((n, b) => n + (b.track === track ? 1 : 0), 0);\n  }\n\n  build() {\n    const parts = [\n      elem(ID.EBML, concat([\n        elem(ID.EBMLVersion, uint(1)),\n        elem(ID.EBMLReadVersion, uint(1)),\n        elem(ID.EBMLMaxIDLength, uint(4)),\n        elem(ID.EBMLMaxSizeLength, uint(8)),\n        elem(ID.DocType, text('webm')),\n        elem(ID.DocTypeVersion, uint(4)),\n        elem(ID.DocTypeReadVersion, uint(2)),\n      ])),\n      concat([bytes(ID.Segment), UNKNOWN_SIZE]),\n      elem(ID.Info, concat([\n        elem(ID.TimecodeScale, uint(1_000_000)),\n        elem(ID.MuxingApp, text(APP)),\n        elem(ID.WritingApp, text(APP)),\n        elem(ID.Duration, f64(this.durationMs)),\n      ])),\n      elem(ID.Tracks, concat([this.#videoTrack(), ...(this.audio ? [this.#audioTrack()] : [])])),\n    ];\n    for (const cluster of this.#clusters()) parts.push(cluster);\n    return concat(parts);\n  }\n\n  #track(num, type, codecId, extra) {\n    return elem(ID.TrackEntry, concat([\n      elem(ID.TrackNumber, uint(num)),\n      elem(ID.TrackUID, uint(num)),\n      elem(ID.FlagLacing, uint(0)),\n      elem(ID.CodecID, text(codecId)),\n      elem(ID.TrackType, uint(type)),\n      ...extra,\n    ]));\n  }\n\n  #videoTrack() {\n    return this.#track(1, 1, this.videoCodec, [\n      elem(ID.Video, concat([elem(ID.PixelWidth, uint(this.width)), elem(ID.PixelHeight, uint(this.height))])),\n    ]);\n  }\n\n  #audioTrack() {\n    const { channels, codecPrivate, preSkipSamples } = this.audio;\n    const extra = [elem(ID.Audio, concat([elem(ID.SamplingFrequency, f64(48000)), elem(ID.Channels, uint(channels))]))];\n    if (codecPrivate) extra.unshift(elem(ID.CodecPrivate, codecPrivate));\n    // The encoder adds pre-skip samples of silence; CodecDelay tells the player to drop them again.\n    extra.push(elem(ID.CodecDelay, uint((preSkipSamples / 48000) * 1e9)), elem(ID.SeekPreRoll, uint(SEEK_PRE_ROLL_NS)));\n    return this.#track(2, 2, 'A_OPUS', extra);\n  }\n\n  #clusters() {\n    const blocks = [...this.blocks].sort((a, b) => a.ms - b.ms || a.track - b.track);\n    const out = [];\n    for (let i = 0; i < blocks.length; ) {\n      const start = blocks[i].ms;\n      const body = [elem(ID.Timecode, uint(start))];\n      while (i < blocks.length && blocks[i].ms - start <= CLUSTER_MS) {\n        body.push(this.#block(blocks[i], start));\n        i++;\n      }\n      out.push(concat([bytes(ID.Cluster), UNKNOWN_SIZE, ...body]));\n    }\n    return out;\n  }\n\n  #block(b, clusterStart) {\n    const head = new Uint8Array(4);\n    head[0] = 0x80 | b.track;                 // the track number as a variable-size integer\n    new DataView(head.buffer).setInt16(1, b.ms - clusterStart);\n    head[3] = b.key ? 0x80 : 0x00;\n    return elem(ID.SimpleBlock, concat([head, b.data]));\n  }\n}\n\nwindow.__amvWebm = { WebmWriter };\n";
 
 // src/cli.js
-import { join as join11, resolve as resolve4, dirname as dirname3, basename as basename4, sep as sep3 } from "node:path";
+import { join as join12, resolve as resolve4, dirname as dirname3, basename as basename4, sep as sep3 } from "node:path";
 import { spawn as spawn4 } from "node:child_process";
 
 // src/languages/zh.js
@@ -8790,6 +8790,7 @@ var CONFIG_KEYS = Object.freeze({
   style: { type: "enum", choices: CHOICES.style, default: "80", label: "STE writing-check strictness" },
   update_check: { type: "bool", default: true, label: "Check for a new version once a week in the background and tell you (never updates by itself)" },
   close_after_reply: { type: "bool", default: false, label: "Close the page tab 3 seconds after the reply is copied (a Keep open button cancels it)" },
+  docreader_upload: { type: "bool", default: true, label: "Upload each rendered page to your DocReader server (agent101.uk) after rendering \u2014 this fork adds this; needs DOC_READER_API_KEY or the doc-reader-upload CLI, and is skipped silently when neither is set" },
   voice: { type: "enum", choices: VOICES, default: "auto", label: "Video narration voice-over (auto: ElevenLabs if ELEVENLABS_API_KEY is set, otherwise system TTS; local: the local service at AM_TTS_URL)" }
 });
 var TRUE = /* @__PURE__ */ new Set(["on", "true", "yes", "1", "\u5F00", "\u5F00\u542F", "\u6253\u5F00"]);
@@ -9886,11 +9887,88 @@ ${VIDEO_JS}</script>
 `;
 }
 
+// src/docreader.js
+import { existsSync as existsSync5 } from "node:fs";
+import { spawnSync as spawnSync3 } from "node:child_process";
+import { join as join8 } from "node:path";
+var DOCREADER_CATEGORIES = Object.freeze([
+  "agent",
+  "defi",
+  "blockchain",
+  "protocol",
+  "security",
+  "network",
+  "engineering",
+  "other"
+]);
+var BROWSER_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
+var docReaderBase = (env) => String(env.DOC_READER_BASE || "https://agent101.uk").replace(/\/+$/, "");
+var normalizeCategory = (value) => DOCREADER_CATEGORIES.includes(value) ? value : "other";
+function docReaderUploadEnabled(opts, env, configValues) {
+  if (opts["no-upload"]) return false;
+  if (opts.upload) return true;
+  const raw = env.AM_DOCREADER_UPLOAD;
+  if (raw !== void 0 && raw !== "") return !["0", "off", "false", "no"].includes(String(raw).trim().toLowerCase());
+  return configValues?.docreader_upload !== false;
+}
+function findUploadCli(env) {
+  const candidates = [env.DOC_READER_UPLOAD_CLI];
+  if (env.HOME) candidates.push(join8(env.HOME, "workspace", "skills", "doc-reader-upload", "bin", "upload_doc.py"));
+  return candidates.filter(Boolean).find((p) => existsSync5(p)) ?? null;
+}
+async function uploadToDocReader({ html, file, title, category, externalId }, env, fetchImpl = fetch) {
+  const base = docReaderBase(env);
+  const key = env.DOC_READER_API_KEY;
+  if (key) {
+    const payload = { title, html, category };
+    if (externalId) payload.externalId = externalId;
+    let res;
+    try {
+      res = await fetchImpl(`${base}/api/ai/docs`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "User-Agent": BROWSER_UA, "X-API-Key": key },
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(3e4)
+      });
+    } catch (e) {
+      throw new Error(`cannot reach ${base}: ${e.message}`);
+    }
+    const text = await res.text();
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${text.slice(0, 300)}`);
+    let body;
+    try {
+      body = JSON.parse(text);
+    } catch {
+      throw new Error(`unexpected reply from ${base}: ${text.slice(0, 200)}`);
+    }
+    const id = body?.doc?.id;
+    if (!id) throw new Error(`the reply from ${base} carries no doc id`);
+    return { status: body.status ?? "created", id, url: `${base}/#/doc/${id}`, via: "api" };
+  }
+  const cli = findUploadCli(env);
+  if (cli) {
+    const args = [cli, "--title", title, "--category", category, "--html-file", file, "--yes"];
+    if (externalId) args.push("--external-id", externalId);
+    const run2 = spawnSync3("python3", args, { encoding: "utf8", timeout: 6e4, env });
+    if (run2.error) throw new Error(`cannot run the doc-reader-upload CLI: ${run2.error.message}`);
+    if (run2.status !== 0) throw new Error(`doc-reader-upload CLI failed: ${(run2.stderr || run2.stdout || "").trim().slice(-300)}`);
+    let parsed = null;
+    try {
+      parsed = JSON.parse(String(run2.stdout).match(/\{[\s\S]*\}/)?.[0] ?? "");
+    } catch {
+      parsed = null;
+    }
+    if (!parsed?.id) throw new Error("the doc-reader-upload CLI finished without a doc id");
+    return { status: parsed.status ?? "created", id: parsed.id, url: parsed.read ?? `${base}/#/doc/${parsed.id}`, via: "cli" };
+  }
+  return { skipped: "no DOC_READER_API_KEY in the environment and no doc-reader-upload CLI found" };
+}
+
 // src/video/export.js
 import { spawn as spawn2 } from "node:child_process";
-import { existsSync as existsSync5, mkdtempSync as mkdtempSync2, rmSync as rmSync4, writeFileSync as writeFileSync5 } from "node:fs";
+import { existsSync as existsSync6, mkdtempSync as mkdtempSync2, rmSync as rmSync4, writeFileSync as writeFileSync5 } from "node:fs";
 import { tmpdir as tmpdir2 } from "node:os";
-import { join as join8 } from "node:path";
+import { join as join9 } from "node:path";
 import { pathToFileURL } from "node:url";
 var ExportError = class extends Error {
 };
@@ -9919,16 +9997,16 @@ function findChrome(env = process.env, platform = process.platform) {
   const custom = env.AM_CHROME || env.CHROME_PATH;
   if (custom) return custom;
   const list2 = CHROME_PATHS[platform] ?? CHROME_PATHS.linux;
-  return list2.find((p) => p.includes("/") || p.includes("\\") ? existsSync5(p) : hasCommand(p)) ?? null;
+  return list2.find((p) => p.includes("/") || p.includes("\\") ? existsSync6(p) : hasCommand(p)) ?? null;
 }
 async function openPlayer(htmlFile, { env, startTimeoutMs }) {
   const chromePath = findChrome(env);
   if (!chromePath) throw new ExportError("No Chrome / Chromium / Edge found. Set the browser path with the AM_CHROME environment variable");
-  const tmp = mkdtempSync2(join8(tmpdir2(), "am-export-"));
+  const tmp = mkdtempSync2(join9(tmpdir2(), "am-export-"));
   const chrome = spawn2(chromePath, [
     "--headless=new",
     "--remote-debugging-port=0",
-    `--user-data-dir=${join8(tmp, "profile")}`,
+    `--user-data-dir=${join9(tmp, "profile")}`,
     "--no-first-run",
     "--no-default-browser-check",
     "--hide-scrollbars",
@@ -9987,7 +10065,7 @@ async function exportMp4(htmlFile, mp4File, { wav: wav2, env = process.env, onPr
   const player = await openPlayer(htmlFile, { env, startTimeoutMs });
   try {
     const { info, evaluate, screenshot, tmp } = player;
-    const wavFile = wav2 ? join8(tmp, "voice.wav") : null;
+    const wavFile = wav2 ? join9(tmp, "voice.wav") : null;
     if (wav2) writeFileSync5(wavFile, wav2);
     const ffmpeg = spawn2("ffmpeg", [
       "-y",
@@ -10151,7 +10229,7 @@ function connect(url) {
 
 // src/housekeeping.js
 import { readdirSync as readdirSync2, lstatSync, rmSync as rmSync5 } from "node:fs";
-import { join as join9 } from "node:path";
+import { join as join10 } from "node:path";
 
 // src/update.js
 import { spawn as spawn3 } from "node:child_process";
@@ -10268,7 +10346,7 @@ function walk(dir) {
     return [];
   }
   return entries.flatMap((e) => {
-    const p = join9(dir, e.name);
+    const p = join10(dir, e.name);
     if (e.isDirectory()) return walk(p);
     try {
       const s = lstatSync(p);
@@ -10281,7 +10359,7 @@ function walk(dir) {
 var sum = (files) => files.reduce((n, f2) => n + f2.bytes, 0);
 function usage2(home) {
   const parts = Object.fromEntries(DIRS3.map((d) => {
-    const files = walk(join9(home, d));
+    const files = walk(join10(home, d));
     return [d, { count: files.length, bytes: sum(files) }];
   }));
   return { ...parts, total: DIRS3.reduce((n, d) => n + parts[d].bytes, 0) };
@@ -10289,8 +10367,8 @@ function usage2(home) {
 function clean2(home, { days = CLEAN.days, all = false, dryRun = false, now = Date.now() } = {}) {
   const cutoff = now - days * DAY;
   const victims = [
-    ...["pages", "videos"].flatMap((d) => walk(join9(home, d)).filter((f2) => all || f2.mtime < cutoff)),
-    ...walk(join9(home, "cache"))
+    ...["pages", "videos"].flatMap((d) => walk(join10(home, d)).filter((f2) => all || f2.mtime < cutoff)),
+    ...walk(join10(home, "cache"))
   ];
   if (!dryRun) {
     for (const f2 of victims) rmSync5(f2.path, { force: true });
@@ -10397,7 +10475,7 @@ import { networkInterfaces, uptime } from "node:os";
 import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import { readFileSync as readFileSync8, writeFileSync as writeFileSync6, renameSync as renameSync4, rmSync as rmSync6 } from "node:fs";
 import { lstat, realpath, readFile } from "node:fs/promises";
-import { join as join10, resolve as resolve3, dirname as dirname2, basename as basename3, sep as sep2 } from "node:path";
+import { join as join11, resolve as resolve3, dirname as dirname2, basename as basename3, sep as sep2 } from "node:path";
 var DEFAULT_PORT = 8765;
 var HOST = "127.0.0.1";
 var LAN_BIND = "0.0.0.0";
@@ -10458,7 +10536,7 @@ var ServeError = class extends Error {
     this.name = "ServeError";
   }
 };
-var infoPath = (home) => join10(home, "serve.json");
+var infoPath = (home) => join11(home, "serve.json");
 function pageToken(secret, dir, file) {
   return createHmac("sha256", secret).update(`${dir}/${file}`).digest("base64url").slice(0, TOKEN_LENGTH);
 }
@@ -10532,8 +10610,8 @@ function reply(req, res, status, type, body = "") {
 var notFound = (req, res) => reply(req, res, 404, "text/plain; charset=utf-8", "Not found\n");
 async function resolvePage(home, dir, file) {
   try {
-    const root = await realpath(join10(home, dir));
-    const path = join10(root, file);
+    const root = await realpath(join11(home, dir));
+    const path = join11(root, file);
     if (!(await lstat(path)).isFile()) return null;
     const real = await realpath(path);
     return real.startsWith(root + sep2) ? real : null;
@@ -10657,6 +10735,7 @@ var USAGE = `Answer me with HTML ${VERSION} \u2014 renders a Markdown draft into
 Usage:
   am render <file|->  [-o <path>] [--replace <page>] [--no-open] [--theme ${["auto", ...themeNames("page")].join("|")}]
                       [--template sheet|doc] [--style off|80|strict] [--mode auto|light|dark]
+                      [--no-upload] [--upload] [--category <name>] [--external-id <id>]
   am patch  <html> --panel <title> [file|-] [--from file] [--theme \u2026] [--no-open]
                                                   replace one ## panel of an existing page and overwrite that HTML in place
   am video  <file|->  [-o <path>] [--voice auto|elevenlabs|local|system|off] [--mp4] [--webm] [--no-open]
@@ -10676,6 +10755,7 @@ Usage:
 - Output goes to ~/.answer-me-with-html/pages/ by default (change it with the AM_HOME environment variable).
 - A page with STE or code warnings does not open. Fix the draft and render again with --replace <page>: the earlier page is deleted once the new one is written.
 - Set auto-open, the default theme and more with am config; --open / --no-open apply to this run only.
+- Fork feature: after a render, the page is uploaded to your DocReader server (default https://agent101.uk, DOC_READER_BASE changes it). --no-upload skips one run, am config set docreader_upload off turns it off; the category comes from --category, the draft's category: frontmatter or DOC_READER_CATEGORY. Without DOC_READER_API_KEY or the doc-reader-upload CLI the upload is skipped and the render still succeeds.
 - am patch reads the source draft from the page's hidden #am-source, changes only the ## section that --panel names, and writes the page back to the same path.`;
 var FORMAT = `Draft format (extended Markdown)
 
@@ -10831,6 +10911,10 @@ async function main(argv, io = {}) {
         replace: { type: "string" },
         "no-open": { type: "boolean" },
         open: { type: "boolean" },
+        upload: { type: "boolean" },
+        "no-upload": { type: "boolean" },
+        category: { type: "string" },
+        "external-id": { type: "string" },
         theme: { type: "string" },
         template: { type: "string" },
         style: { type: "string" },
@@ -10929,7 +11013,7 @@ async function cmdRender(src, opts, ctx, baseDir) {
   const { fail, print } = ctx;
   const replaced = opts.replace === void 0 ? null : pagePath(opts.replace, ctx);
   if (replaced === false) {
-    fail(`\u2717 --replace takes a page that am render wrote (a .html file in ${join11(amHome(ctx.env), "pages")})`);
+    fail(`\u2717 --replace takes a page that am render wrote (a .html file in ${join12(amHome(ctx.env), "pages")})`);
     return 2;
   }
   const config = loadConfig(ctx);
@@ -10944,9 +11028,29 @@ async function cmdRender(src, opts, ctx, baseDir) {
   const file = outputPath("pages", result.meta.title, opts, ctx);
   emit(result, file, ctx);
   if (replaced && replaced !== resolve4(file)) rmSync7(replaced, { force: true });
+  await maybeUploadDocReader(result, file, opts, config, ctx);
   const held = !opts.open && hasRetryWarnings(result) && shouldOpen(opts, ctx.env, config.values);
   if (held) print(`  Not opened because of the warnings; to render again, add --replace ${file}`);
   return finish(file, held ? { ...opts, "no-open": true } : opts, config, ctx);
+}
+async function maybeUploadDocReader(result, file, opts, config, ctx) {
+  const { print, fail, env } = ctx;
+  if (!docReaderUploadEnabled(opts, env, config.values)) return;
+  const category = normalizeCategory(opts.category ?? result.meta.category ?? env.DOC_READER_CATEGORY ?? "other");
+  const rawId = opts["external-id"] ?? result.meta.external_id ?? result.meta["external-id"];
+  try {
+    const r = await uploadToDocReader({
+      html: result.html,
+      file,
+      title: result.meta.title || "Untitled",
+      category,
+      externalId: rawId === void 0 ? void 0 : String(rawId)
+    }, env);
+    if (r.skipped) print(`  DocReader: not uploaded (${r.skipped}; am config set docreader_upload off silences this)`);
+    else print(`  DocReader: ${r.status} \u2192 ${r.url}`);
+  } catch (e) {
+    fail(`\u2717 DocReader upload failed (the page itself is fine): ${e.message}`);
+  }
 }
 var updateFor = (config, { env, io }) => pageUpdate(readState(amHome(env)), VERSION, io.scriptPath, env, config.values);
 var hasRetryWarnings = (result) => result.warnings.length > 0 || (result.stats.codeWarnings ?? []).length > 0 || (result.stats.mathWarnings ?? []).length > 0;
@@ -11122,7 +11226,7 @@ async function buildVideo(src, voice, opts, config, { fail, env, io, themes: the
   if (provider) ensureHome(amHome(env));
   const result = await renderVideo(src, {
     provider,
-    cacheDir: join11(amHome(env), "cache", "tts"),
+    cacheDir: join12(amHome(env), "cache", "tts"),
     defaults: { style: config.values.style, theme: config.values.theme, mode: config.values.mode },
     overrides: { style: opts.style, theme: opts.theme, mode: opts.mode },
     previousLanguage: opts.previousLanguage,
@@ -11162,7 +11266,7 @@ function themeWarnings({ fail, themes: themes2 }) {
 }
 function outputPath(dir, title, opts, { env, io }) {
   if (opts.out) return resolve4(io.cwd ?? process.cwd(), opts.out);
-  return join11(amHome(env), dir, `${slug(title)}-${stamp(new Date(io.now?.() ?? Date.now()))}.html`);
+  return join12(amHome(env), dir, `${slug(title)}-${stamp(new Date(io.now?.() ?? Date.now()))}.html`);
 }
 function writePage(file, html, env) {
   const home = resolve4(amHome(env));
@@ -11372,13 +11476,13 @@ function cmdTheme(action, target, opts, ctx) {
     return 2;
   }
   const isFile = /\.json$/i.test(target) || /[\\/]/.test(target);
-  const path = isFile ? resolve4(io.cwd ?? process.cwd(), target) : join11(amHome(env), "themes", `${target}.json`);
+  const path = isFile ? resolve4(io.cwd ?? process.cwd(), target) : join12(amHome(env), "themes", `${target}.json`);
   const name = isFile ? basename4(path).replace(/\.json$/i, "") : target;
   let theme;
   let errors = [];
   if (!isFile && getTheme(name)) {
     theme = getTheme(name);
-  } else if (existsSync6(path)) {
+  } else if (existsSync7(path)) {
     ({ theme, errors } = readThemeFile(path, themeNames("video")));
   } else {
     fail(`\u2717 No theme named "${target}": ${path} does not exist`);
