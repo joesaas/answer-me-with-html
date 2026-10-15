@@ -17,6 +17,7 @@ import { checkColors, externalResourceWarnings, COLOR_TOKENS } from './themes/ch
 import { FONT_NAMES } from './themes/font-list.js';
 import { THEME_SELECTORS } from './themes/selectors.js';
 import { renderVideo } from './video/render.js';
+import { uploadToDocReader, docReaderUploadEnabled, normalizeCategory } from './docreader.js';
 import { pickProvider, TtsError } from './video/tts.js';
 import { exportMp4, exportWebm, ExportError } from './video/export.js';
 import { afterRender, clean, usage, mb, CLEAN } from './housekeeping.js';
@@ -40,6 +41,7 @@ const USAGE = `Answer me with HTML ${VERSION} — renders a Markdown draft into 
 Usage:
   am render <file|->  [-o <path>] [--replace <page>] [--no-open] [--theme ${['auto', ...themeNames('page')].join('|')}]
                       [--template sheet|doc] [--style off|80|strict] [--mode auto|light|dark]
+                      [--no-upload] [--upload] [--category <name>] [--external-id <id>]
   am patch  <html> --panel <title> [file|-] [--from file] [--theme …] [--no-open]
                                                   replace one ## panel of an existing page and overwrite that HTML in place
   am video  <file|->  [-o <path>] [--voice auto|elevenlabs|local|system|off] [--mp4] [--webm] [--no-open]
@@ -59,6 +61,7 @@ Usage:
 - Output goes to ~/.answer-me-with-html/pages/ by default (change it with the AM_HOME environment variable).
 - A page with STE or code warnings does not open. Fix the draft and render again with --replace <page>: the earlier page is deleted once the new one is written.
 - Set auto-open, the default theme and more with am config; --open / --no-open apply to this run only.
+- Fork feature: after a render, the page is uploaded to your DocReader server (default https://agent101.uk, DOC_READER_BASE changes it). --no-upload skips one run, am config set docreader_upload off turns it off; the category comes from --category, the draft's category: frontmatter or DOC_READER_CATEGORY. Without DOC_READER_API_KEY or the doc-reader-upload CLI the upload is skipped and the render still succeeds.
 - am patch reads the source draft from the page's hidden #am-source, changes only the ## section that --panel names, and writes the page back to the same path.`;
 
 const FORMAT = `Draft format (extended Markdown)
@@ -220,6 +223,10 @@ export async function main(argv, io = {}) {
         replace: { type: 'string' },
         'no-open': { type: 'boolean' },
         open: { type: 'boolean' },
+        upload: { type: 'boolean' },
+        'no-upload': { type: 'boolean' },
+        category: { type: 'string' },
+        'external-id': { type: 'string' },
         theme: { type: 'string' },
         template: { type: 'string' },
         style: { type: 'string' },
@@ -328,10 +335,35 @@ async function cmdRender(src, opts, ctx, baseDir) {
   emit(result, file, ctx);
   // Delete the earlier attempt only now: a render that fails above keeps it.
   if (replaced && replaced !== resolve(file)) rmSync(replaced, { force: true });
+  // Fork feature: upload the finished page to the user's DocReader server.
+  await maybeUploadDocReader(result, file, opts, config, ctx);
   // A page with STE, code or math warnings is likely to be rendered again, so it opens only when --open asks for it.
   const held = !opts.open && hasRetryWarnings(result) && shouldOpen(opts, ctx.env, config.values);
   if (held) print(`  Not opened because of the warnings; to render again, add --replace ${file}`);
   return finish(file, held ? { ...opts, 'no-open': true } : opts, config, ctx);
+}
+
+// Fork feature (src/docreader.js): after a successful render, upload the page to the
+// user's DocReader server. An upload problem never fails the render: it is reported
+// and the page stays as it was. A missing credential is a skip, not an error.
+async function maybeUploadDocReader(result, file, opts, config, ctx) {
+  const { print, fail, env } = ctx;
+  if (!docReaderUploadEnabled(opts, env, config.values)) return;
+  const category = normalizeCategory(opts.category ?? result.meta.category ?? env.DOC_READER_CATEGORY ?? 'other');
+  const rawId = opts['external-id'] ?? result.meta.external_id ?? result.meta['external-id'];
+  try {
+    const r = await uploadToDocReader({
+      html: result.html,
+      file,
+      title: result.meta.title || 'Untitled',
+      category,
+      externalId: rawId === undefined ? undefined : String(rawId),
+    }, env);
+    if (r.skipped) print(`  DocReader: not uploaded (${r.skipped}; am config set docreader_upload off silences this)`);
+    else print(`  DocReader: ${r.status} → ${r.url}`);
+  } catch (e) {
+    fail(`✗ DocReader upload failed (the page itself is fine): ${e.message}`);
+  }
 }
 
 // The new-version button for the page, from the version the background check last saw (src/update.js).
