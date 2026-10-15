@@ -8790,7 +8790,7 @@ var CONFIG_KEYS = Object.freeze({
   style: { type: "enum", choices: CHOICES.style, default: "80", label: "STE writing-check strictness" },
   update_check: { type: "bool", default: true, label: "Check for a new version once a week in the background and tell you (never updates by itself)" },
   close_after_reply: { type: "bool", default: false, label: "Close the page tab 3 seconds after the reply is copied (a Keep open button cancels it)" },
-  docreader_upload: { type: "bool", default: true, label: "Upload each rendered page to your DocReader server (agent101.uk) after rendering \u2014 this fork adds this; needs DOC_READER_API_KEY or the doc-reader-upload CLI, and is skipped silently when neither is set" },
+  docreader_upload: { type: "bool", default: true, label: "Upload each rendered page to your DocReader server (agent101.uk) after rendering \u2014 this fork adds this; needs DOC_READER_API_KEY or a credential adapter (AM_DOCREADER_ADAPTER), and is skipped silently when neither is set" },
   voice: { type: "enum", choices: VOICES, default: "auto", label: "Video narration voice-over (auto: ElevenLabs if ELEVENLABS_API_KEY is set, otherwise system TTS; local: the local service at AM_TTS_URL)" }
 });
 var TRUE = /* @__PURE__ */ new Set(["on", "true", "yes", "1", "\u5F00", "\u5F00\u542F", "\u6253\u5F00"]);
@@ -9902,6 +9902,7 @@ var DOCREADER_CATEGORIES = Object.freeze([
   "other"
 ]);
 var BROWSER_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
+var HEADER_NAME = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;
 var docReaderBase = (env) => String(env.DOC_READER_BASE || "https://agent101.uk").replace(/\/+$/, "");
 var normalizeCategory = (value) => DOCREADER_CATEGORIES.includes(value) ? value : "other";
 function docReaderUploadEnabled(opts, env, configValues) {
@@ -9911,57 +9912,83 @@ function docReaderUploadEnabled(opts, env, configValues) {
   if (raw !== void 0 && raw !== "") return !["0", "off", "false", "no"].includes(String(raw).trim().toLowerCase());
   return configValues?.docreader_upload !== false;
 }
-function findUploadCli(env) {
-  const candidates = [env.DOC_READER_UPLOAD_CLI];
-  if (env.HOME) candidates.push(join8(env.HOME, "workspace", "skills", "doc-reader-upload", "bin", "upload_doc.py"));
-  return candidates.filter(Boolean).find((p) => existsSync5(p)) ?? null;
+function docReaderHome(env) {
+  if (env.AM_HOME) return env.AM_HOME;
+  return env.HOME ? join8(env.HOME, ".answer-me-with-html") : null;
 }
-async function uploadToDocReader({ html, file, title, category, externalId }, env, fetchImpl = fetch) {
-  const base = docReaderBase(env);
+function findDocReaderAdapter(env) {
+  if (env.AM_DOCREADER_ADAPTER) return env.AM_DOCREADER_ADAPTER;
+  const home = docReaderHome(env);
+  if (!home) return null;
+  const candidate = join8(home, "adapters", "docreader");
+  return existsSync5(candidate) ? candidate : null;
+}
+function runDocReaderAdapter(adapter, env, base) {
+  const host = new URL(base).hostname;
+  const run2 = spawnSync3(adapter, [], {
+    input: JSON.stringify({ base, host }),
+    encoding: "utf8",
+    timeout: 15e3,
+    env
+  });
+  if (run2.error) throw new Error(`cannot run the DocReader adapter ${adapter}: ${run2.error.message}`);
+  if (run2.status !== 0) {
+    throw new Error(`DocReader adapter ${adapter} failed: ${(run2.stderr || "").trim().slice(-300) || `exit ${run2.status}`}`);
+  }
+  let parsed;
+  try {
+    parsed = JSON.parse(String(run2.stdout).trim());
+  } catch {
+    throw new Error(`DocReader adapter ${adapter} did not print a JSON object`);
+  }
+  if (parsed?.skip) return { skip: String(parsed.skip) };
+  const headers = parsed?.headers;
+  if (!headers || typeof headers !== "object" || Array.isArray(headers)) {
+    throw new Error(`DocReader adapter ${adapter} printed no "headers" object`);
+  }
+  const entries = Object.entries(headers).filter(([k2, v]) => HEADER_NAME.test(k2) && typeof v === "string" && v !== "");
+  if (!entries.length) throw new Error(`DocReader adapter ${adapter} returned no usable header`);
+  return { headers: Object.fromEntries(entries) };
+}
+function resolveDocReaderAuth(env, base) {
   const key = env.DOC_READER_API_KEY;
-  if (key) {
-    const payload = { title, html, category };
-    if (externalId) payload.externalId = externalId;
-    let res;
-    try {
-      res = await fetchImpl(`${base}/api/ai/docs`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "User-Agent": BROWSER_UA, "X-API-Key": key },
-        body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(3e4)
-      });
-    } catch (e) {
-      throw new Error(`cannot reach ${base}: ${e.message}`);
-    }
-    const text = await res.text();
-    if (!res.ok) throw new Error(`HTTP ${res.status} ${text.slice(0, 300)}`);
-    let body;
-    try {
-      body = JSON.parse(text);
-    } catch {
-      throw new Error(`unexpected reply from ${base}: ${text.slice(0, 200)}`);
-    }
-    const id = body?.doc?.id;
-    if (!id) throw new Error(`the reply from ${base} carries no doc id`);
-    return { status: body.status ?? "created", id, url: `${base}/#/doc/${id}`, via: "api" };
+  if (key) return { headers: { "X-API-Key": key }, via: "env" };
+  const adapter = findDocReaderAdapter(env);
+  if (adapter) {
+    const r = runDocReaderAdapter(adapter, env, base);
+    if (r.skip) return { skip: r.skip };
+    return { headers: r.headers, via: "adapter" };
   }
-  const cli = findUploadCli(env);
-  if (cli) {
-    const args = [cli, "--title", title, "--category", category, "--html-file", file, "--yes"];
-    if (externalId) args.push("--external-id", externalId);
-    const run2 = spawnSync3("python3", args, { encoding: "utf8", timeout: 6e4, env });
-    if (run2.error) throw new Error(`cannot run the doc-reader-upload CLI: ${run2.error.message}`);
-    if (run2.status !== 0) throw new Error(`doc-reader-upload CLI failed: ${(run2.stderr || run2.stdout || "").trim().slice(-300)}`);
-    let parsed = null;
-    try {
-      parsed = JSON.parse(String(run2.stdout).match(/\{[\s\S]*\}/)?.[0] ?? "");
-    } catch {
-      parsed = null;
-    }
-    if (!parsed?.id) throw new Error("the doc-reader-upload CLI finished without a doc id");
-    return { status: parsed.status ?? "created", id: parsed.id, url: parsed.read ?? `${base}/#/doc/${parsed.id}`, via: "cli" };
+  return { skip: "no DOC_READER_API_KEY in the environment and no DocReader adapter found (AM_DOCREADER_ADAPTER or $AM_HOME/adapters/docreader)" };
+}
+async function uploadToDocReader({ html, title, category, externalId }, env, fetchImpl = fetch) {
+  const base = docReaderBase(env);
+  const auth = resolveDocReaderAuth(env, base);
+  if (auth.skip) return { skipped: auth.skip };
+  const payload = { title, html, category };
+  if (externalId) payload.externalId = externalId;
+  let res;
+  try {
+    res = await fetchImpl(`${base}/api/ai/docs`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "User-Agent": BROWSER_UA, ...auth.headers },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(3e4)
+    });
+  } catch (e) {
+    throw new Error(`cannot reach ${base}: ${e.message}`);
   }
-  return { skipped: "no DOC_READER_API_KEY in the environment and no doc-reader-upload CLI found" };
+  const text = await res.text();
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${text.slice(0, 300)}`);
+  let body;
+  try {
+    body = JSON.parse(text);
+  } catch {
+    throw new Error(`unexpected reply from ${base}: ${text.slice(0, 200)}`);
+  }
+  const id = body?.doc?.id;
+  if (!id) throw new Error(`the reply from ${base} carries no doc id`);
+  return { status: body.status ?? "created", id, url: `${base}/#/doc/${id}`, via: auth.via };
 }
 
 // src/video/export.js
@@ -10755,7 +10782,7 @@ Usage:
 - Output goes to ~/.answer-me-with-html/pages/ by default (change it with the AM_HOME environment variable).
 - A page with STE or code warnings does not open. Fix the draft and render again with --replace <page>: the earlier page is deleted once the new one is written.
 - Set auto-open, the default theme and more with am config; --open / --no-open apply to this run only.
-- Fork feature: after a render, the page is uploaded to your DocReader server (default https://agent101.uk, DOC_READER_BASE changes it). --no-upload skips one run, am config set docreader_upload off turns it off; the category comes from --category, the draft's category: frontmatter or DOC_READER_CATEGORY. Without DOC_READER_API_KEY or the doc-reader-upload CLI the upload is skipped and the render still succeeds.
+- Fork feature: after a render, the page is uploaded to your DocReader server (default https://agent101.uk, DOC_READER_BASE changes it). --no-upload skips one run, am config set docreader_upload off turns it off; the category comes from --category, the draft's category: frontmatter or DOC_READER_CATEGORY. Credentials come from DOC_READER_API_KEY or a per-runtime adapter (AM_DOCREADER_ADAPTER, else $AM_HOME/adapters/docreader); with neither, the upload is skipped and the render still succeeds.
 - am patch reads the source draft from the page's hidden #am-source, changes only the ## section that --panel names, and writes the page back to the same path.`;
 var FORMAT = `Draft format (extended Markdown)
 
