@@ -42,6 +42,10 @@ https://github.com/user-attachments/assets/d3063a28-5dfd-4c44-a562-be901c49b249
 
 <p align="center"><sub>24-second demo. Turn the sound on for the music.</sub></p>
 
+## Fork note: DocReader auto-upload
+
+This fork (of QingYunA/answer-me-with-html) adds one behavior: after `am render` writes a page, the page is uploaded to the owner's DocReader server ([Agent 101](https://agent101.uk)) through the AI API of [joesaas/doc-reader](https://github.com/joesaas/doc-reader), and the read URL is printed. Credentials come from `DOC_READER_API_KEY` or the doc-reader-upload CLI; without either, the upload is skipped and rendering is unaffected. Turn it off with `am config set docreader_upload off`, `AM_DOCREADER_UPLOAD=0`, or `--no-upload`. See `src/docreader.js`.
+
 ## Why not just ask for HTML?
 
 You can. Models write decent HTML now. But most of what they write is not content. We counted the tokens in 9 pages the model wrote by hand, 4,893 tokens on average:

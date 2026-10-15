@@ -41,6 +41,10 @@ https://github.com/user-attachments/assets/1f13b1fe-70a9-4c39-8530-b12e553e17ea
 
 <p align="center"><sub>24 秒演示，打开声音可以听到配乐。</sub></p>
 
+## Fork 说明：DocReader 自动上传
+
+这个 fork（源自 QingYunA/answer-me-with-html）新增了一个行为：`am render` 生成页面后，会通过 [joesaas/doc-reader](https://github.com/joesaas/doc-reader) 的 AI 接口把页面默认上传到作者的 DocReader 服务器（[Agent 101](https://agent101.uk)），并打印阅读链接。凭证来自环境变量 `DOC_READER_API_KEY` 或本机的 doc-reader-upload CLI；两者都没有时跳过上传、不影响渲染。关闭方式：`am config set docreader_upload off`、`AM_DOCREADER_UPLOAD=0` 或单次 `--no-upload`。实现见 `src/docreader.js`。
+
 ## 为什么不直接让 AI 输出 HTML？
 
 当然可以，现在的模型写 HTML 已经写得不错了。但它写的大部分都不是内容。我们数了 9 页模型直接手写的 HTML，平均 4,893 个 token：

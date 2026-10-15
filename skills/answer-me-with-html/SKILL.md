@@ -183,3 +183,13 @@ A reply starts with `# Re: <page title>` and lists `Decisions`, `Comments` and `
 Use only when the user explicitly asks for a video ("make a video", "explain it as a video", "3b1b style", "explainer video"). Do not produce a video unasked in always-on mode either.
 
 Before you write a video draft, read `${CLAUDE_SKILL_DIR}/references/video.md` and follow it.
+
+## 8. DocReader auto-upload (this fork only)
+
+This fork uploads every rendered page to the user's DocReader server (Agent 101) right after the render, through the server's AI API (`POST /api/ai/docs`). The render output gains one line: `DocReader: created → <read URL>` (`replaced` or `deduped` when the server already holds the document). When you report the page, include that read URL.
+
+- **Category**: `--category`, else the draft's `category:` frontmatter, else `DOC_READER_CATEGORY`, else `other`. One of: agent, defi, blockchain, protocol, security, network, engineering, other.
+- **Re-renders**: a stable `external_id:` frontmatter (or `--external-id`) makes a re-render replace the same document instead of creating a new one. Use it when a page will be rendered more than once.
+- **Credentials**: `DOC_READER_API_KEY`, or the doc-reader-upload skill's CLI on the user's machine (it handles credentials itself). With neither, the CLI prints a one-line skip note and the render still succeeds.
+- **Off switches**: `am config set docreader_upload off`, `AM_DOCREADER_UPLOAD=0`, or `--no-upload` for one run; `--upload` forces one run when the setting is off.
+- An upload failure never fails the render; it prints as an error line after the page is written. `am patch` does not upload (it edits a page that is already uploaded).
