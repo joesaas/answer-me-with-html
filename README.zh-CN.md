@@ -1,1 +1,321 @@
-PHAgYWxpZ249ImNlbnRlciI+CiAgPGltZyBzcmM9ImRvY3MvbG9nby5zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgYWx0PSJBbnN3ZXIgbWUgd2l0aCBIVE1MIGxvZ28iPgo8L3A+Cgo8aDEgYWxpZ249ImNlbnRlciI+QW5zd2VyIG1lIHdpdGggSFRNTDwvaDE+Cgo8cCBhbGlnbj0iY2VudGVyIj4KICA8Yj7mnoHpgJ/lh7rpobUmbmJzcDsmbmJzcDt8Jm5ic3A7Jm5ic3A7QVNELVNURTEwMCZuYnNwOyZuYnNwO3wmbmJzcDsmbmJzcDvorrLop6Pop4bpopEmbmJzcDsmbmJzcDt8Jm5ic3A7Jm5ic3A75Y2V5paH5Lu256a757q/PC9iPgo8L3A+Cgo8cCBhbGlnbj0iY2VudGVyIj4KICA8Yj7kuIDkuKogQWdlbnQgU2tpbGzvvJrpgYfliLDlpI3mnYLpl67popjvvIxBZ2VudCDkuI3lho3nlKnnu5nkvaDkuIDloLXmloflrZflopnvvIzogIzmmK/nu5nkvaDkuIDpobXog73nnIvmh4LnmoQgSFRNTOOAgjxicj7mqKHlnovopoHlhpnnmoQgdG9rZW7vvIzlj6rmnInlroPnm7TmjqXmiYvlhpkgSFRNTCDnmoTnuqYgMS8444CCPC9iPgo8L3A+Cgo8cCBhbGlnbj0iY2VudGVyIj4KICA8YSBocmVmPSJodHRwczovL2dpdGh1Yi5jb20vUWluZ1l1bkEvYW5zd2VyLW1lLXdpdGgtaHRtbC9yZWxlYXNlcyI+PGltZyBzcmM9Imh0dHBzOi8vaW1nLnNoaWVsZHMuaW8vZ2l0aHViL3YvcmVsZWFzZS9RaW5nWXVuQS9hbnN3ZXItbWUtd2l0aC1odG1sP3N0eWxlPWZsYXQtc3F1YXJlJmxvZ289Z2l0aHViJmxhYmVsQ29sb3I9MTYxODFkJmNvbG9yPTJlYTQ0ZiIgYWx0PSJSZWxlYXNlIj48L2E+CiAgPGEgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL1FpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWwvc3RhcmdhemVycyI+PGltZyBzcmM9Imh0dHBzOi8vaW1nLnNoaWVsZHMuaW8vZ2l0aHViL3N0YXJzL1FpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWw/c3R5bGU9ZmxhdC1zcXVhcmUmbG9nbz1naXRodWImbGFiZWxDb2xvcj0xNjE4MWQmY29sb3I9MmVhNDRmIiBhbHQ9IlN0YXJzIj48L2E+CiAgPGltZyBzcmM9Imh0dHBzOi8vaW1nLnNoaWVsZHMuaW8vYmFkZ2Uvd29ya3MlMjB3aXRoLUNsYXVkZSUyMENvZGUlMjAlQzIlQjclMjBDb2RleCUyMCVDMiVCNyUyMEN1cnNvciUyMCVDMiVCNyUyME9wZW5Db2RlJTIwJUMyJUI3JTIwUGklMjAlQzIlQjclMjBEZWVwU2VlayUyMEhhcm5lc3MtMmVhNDRmP3N0eWxlPWZsYXQtc3F1YXJlJmxhYmVsQ29sb3I9MTYxODFkIiBhbHQ9IldvcmtzIHdpdGggQ2xhdWRlIENvZGUsIENvZGV4LCBDdXJzb3IsIE9wZW5Db2RlLCBQaSwgRGVlcFNlZWsgSGFybmVzcyI+CiAgPGEgaHJlZj0iaHR0cHM6Ly93d3cudGhlYWdlbnRpY2xlYWRlcmJvYXJkLmNvbS9hbHRlcm5hdGl2ZXMvYW5zd2VyLW1lLXdpdGgtaHRtbC8iPjxpbWcgc3JjPSJodHRwczovL3d3dy50aGVhZ2VudGljbGVhZGVyYm9hcmQuY29tL2JhZGdlcy9uZXcvYW5zd2VyLW1lLXdpdGgtaHRtbC5zdmciIGFsdD0iVGhlIE5ldyAxMDAiPjwvYT4KPC9wPgoKPHAgYWxpZ249ImNlbnRlciI+CiAgPGEgaHJlZj0iaHR0cHM6Ly9hbnN3ZXItbWUtd2l0aC1odG1sLmNvbS96aC8iPjxiPuWumOe9kTwvYj48L2E+IMK3IDxhIGhyZWY9IiPlronoo4UiPuWuieijhTwvYT4gwrcgPGEgaHJlZj0iI+S9oOivtOS7gOS5iOS8muW+l+WIsOS7gOS5iCI+56S65L6LPC9hPiDCtyA8YSBocmVmPSIj6Kej6YeK6KeG6aKRIj7op4bpopE8L2E+IMK3IDxhIGhyZWY9IiPpq5jpopHmqKHlvI/mjqjojZAiPumrmOmikeaooeW8jzwvYT4gwrcgPGEgaHJlZj0iZG9jcy9yZWZlcmVuY2UuemgtQ04ubWQiPuWPguiAg+aWh+ahozwvYT4gwrcgPGEgaHJlZj0iUkVBRE1FLm1kIj5FbmdsaXNoPC9hPgo8L3A+Cgo8cCBhbGlnbj0iY2VudGVyIj4KICA8aW1nIHNyYz0iZG9jcy9pbWFnZXMvdGV4dC12cy1wYWdlLXpoLnBuZyIgYWx0PSLlkIzkuIDkuKogVENQIOmXrumimOeahOS4pOenjeWbnuetlO+8muW3pui+ueaYr+e7iOerr+mHjOeahOS4gOWgteaWh+Wtl+Wime+8jOWPs+i+ueaYr+W4puWbvuihqOeahOS4gOmhteiDveeci+aHgueahOmhtemdoiIgd2lkdGg9IjEwMCUiPgo8L3A+Cgroo4Xlpb3kuYvlkI7vvIzlg4/lubPml7bkuIDmoLfmj5Dpl67lsLHooYzvvJoKCmBgYAo+IOiusuiusiBUQ1Ag5LiJ5qyh5o+h5omL5ZKM5Zub5qyh5oyl5omLCj4g55S75LiA5LiL6L+Z5Liq5LuT5bqT55qE5qih5Z2X5YWz57O7Cj4gUmVkaXMg5ZKMIE1lbWNhY2hlZCDor6XmgI7kuYjpgIkKYGBgCgpBZ2VudCDkvJrlhpnkuIDku73lvojnn63nmoQgTWFya2Rvd24g56i/5Lu277yM5Lqk57uZIHNraWxsIOiHquW4pueahCBDTEnjgILlpKfnuqYgNTAg5q+r56eS5ZCO77yM5L2g5bCx5b6X5Yiw5LiA6aG177yaCgpodHRwczovL2dpdGh1Yi5jb20vdXNlci1hdHRhY2htZW50cy9hc3NldHMvMWYxM2IxZmUtNzBhOS00YzM5LTg1MzAtYjEyZTU1M2UxN2VhCgo8cCBhbGlnbj0iY2VudGVyIj48c3ViPjI0IOenkua8lOekuu+8jOaJk+W8gOWjsOmfs+WPr+S7peWQrOWIsOmFjeS5kOOAgjwvc3ViPjwvcD4KCiMjIEZvcmsg6K+05piO77yaRG9jUmVhZGVyIOiHquWKqOS4iuS8oAoK6L+Z5LiqIGZvcmvvvIjmupDoh6ogUWluZ1l1bkEvYW5zd2VyLW1lLXdpdGgtaHRtbO+8ieaWsOWinuS6huS4gOS4quihjOS4uu+8mmBhbSByZW5kZXJgIOeUn+aIkOmhtemdouWQju+8jOS8mumAmui/hyBbam9lc2Fhcy9kb2MtcmVhZGVyXShodHRwczovL2dpdGh1Yi5jb20vam9lc2Fhcy9kb2MtcmVhZGVyKSDnmoQgQUkg5o6l5Y+j5oqK6aG16Z2i6buY6K6k5LiK5Lyg5Yiw5L2c6ICF55qEIERvY1JlYWRlciDmnI3liqHlmajvvIhbQWdlbnQgMTAxXShodHRwczovL2FnZW50MTAxLnVrKe+8ie+8jOW5tuaJk+WNsOmYheivu+mTvuaOpeOAguWHreivgeaMiei/kOihjOaXtuS7pSBhZGFwdGVyIOaWueW8j+aOpeWFpe+8mueOr+Wig+WPmOmHjyBgRE9DX1JFQURFUl9BUElfS0VZYO+8jOaIluavj+WPsOacuuWZqOiHquW3seeahOWHreivgSBhZGFwdGVy77yIYEFNX0RPQ1JFQURFUl9BREFQVEVSYO+8jOaIliBgJEFNX0hPTUUvYWRhcHRlcnMvZG9jcmVhZGVyYO+8m011c2Ug54mIIGFkYXB0ZXIg6ZqPIHNraWxsIOmZhOWcqCBgc2tpbGxzL2Fuc3dlci1tZS13aXRoLWh0bWwvYWRhcHRlcnMvYO+8jOWQjOS4gOWllyBza2lsbCDlj6/ljp/moLfoo4Xov5sgTXVzZeOAgUdlbWluaeOAgUdyb2sgQm90IOetieS7u+aEj+WuueWZqO+8ie+8m+S4pOiAhemDveayoeacieaXtui3s+i/h+S4iuS8oOOAgeS4jeW9seWTjea4suafk+OAguWFs+mXreaWueW8j++8mmBhbSBjb25maWcgc2V0IGRvY3JlYWRlcl91cGxvYWQgb2ZmYOOAgWBBTV9ET0NSRUFERVJfVVBMT0FEPTBgIOaIluWNleasoSBgLS1uby11cGxvYWRg44CC5a6e546w6KeBIGBzcmMvZG9jcmVhZGVyLmpzYOOAggoKIyMg5Li65LuA5LmI5LiN55u05o6l6K6pIEFJIOi+k+WHuiBIVE1M77yfCgrlvZPnhLblj6/ku6XvvIznjrDlnKjnmoTmqKHlnovlhpkgSFRNTCDlt7Lnu4/lhpnlvpfkuI3plJnkuobjgILkvYblroPlhpnnmoTlpKfpg6jliIbpg73kuI3mmK/lhoXlrrnjgILmiJHku6zmlbDkuoYgOSDpobXmqKHlnovnm7TmjqXmiYvlhpnnmoQgSFRNTO+8jOW5s+WdhyA0LDg5MyDkuKogdG9rZW7vvJoKCnwg6aG16Z2i6YeM55qE6YOo5YiGIHwg5Y2g5q+UIHwg55So6L+Z5LiqIHNraWxsIOWQjiB8CnwgOi0tLSB8IC0tLTogfCA6LS0tIHwKfCBTVkcg5Zu+77ya5Z2Q5qCH5ZKM6Lev5b6EIHwgNDclIHwg55SxIENMSSDnlJ/miJAgfAp8IENTUyB8IDE1JSB8IOeUsSBDTEkg55Sf5oiQIHwKfCBIVE1MIOagh+etviB8IDE3JSB8IOeUsSBDTEkg55Sf5oiQIHwKfCDmraPmlofmloflrZcgfCAyMSUgfCDmqKHlnovmnaXlhpnvvIzlhpnmiJAgTWFya2Rvd24gfAoK55So6L+Z5LiqIHNraWxs77yM5qih5Z6L5Y+q5YaZ5LiA5Lu9IE1hcmtkb3duIOeov+S7tuOAguWQjOagt+eahOmXrumimO+8jOeov+S7tuW5s+WdhyA2MTIg5LiqIHRva2Vu77yMKirnuqbkuLrmiYvlhpkgSFRNTCDnmoQgMS84KirjgILopoHlhpnnmoTlsJHvvIznrYnnmoTml7bpl7TlsLHnn63vvIgzIOS4qumimOebriDDlyDmr4/popggMyDmrKHvvIzlj5bkuK3kvY3mlbDvvIxDbGF1ZGUgU29ubmV0IDUuNe+8jOaZrumAmueahCBDbGF1ZGUgQ29kZSDnjq/looPvvInvvJoKCnwgfCDnm7TmjqXopoEgSFRNTCB8IEFuc3dlciBtZSB3aXRoIEhUTUwgfCB8CnwgOi0tLSB8IC0tLTogfCAtLS06IHwgOi0tLSB8Cnwg5qih5Z6L6KaB5YaZ55qEIHRva2VuIHwgNCw4OTMgfCAqKjYxMioqIHwgKirlsJEgOCDlgI0qKiB8Cnwg6ICX5pe2IHwgMzEg56eSIHwgKioxMiDnp5IqKiB8ICoq5b+rIDIuNiDlgI0qKiB8Cgo8cCBhbGlnbj0iY2VudGVyIj4KICA8aW1nIHNyYz0iZG9jcy9pbWFnZXMvcGxhaW4tdnMtc2tpbGwucG5nIiBhbHQ9IuWQjOS4gOS4qiBUQ1Ag6Zeu6aKY55qE5Lik56eN5YGa5rOVIiB3aWR0aD0iMTAwJSI+CjwvcD4KCjxwIGFsaWduPSJjZW50ZXIiPjxzdWI+5ZCM5LiA5Liq6Zeu6aKY44CB5ZCM5LiA5Liq5qih5Z6L77yM5Lik56eN5YGa5rOV5ZCE562U5LiA6YGN77yM5Lik6aG16YO96IO955So44CCPC9zdWI+PC9wPgoKdG9rZW4g5pWw5a2Y5ZyoIFtiZW5jaC9jb3JwdXMvdG9rZW5zLmpzb25dKGJlbmNoL2NvcnB1cy90b2tlbnMuanNvbikg6YeM77yM6L+Q6KGMIGBub2RlIGJlbmNoL2NvcnB1cy5tanNgIOavj+asoemDveW+l+WIsOWQjOagt+eahOaVsOWtl+OAgumhtemdouacrOi6q+WPr+S7pVvkuIvovb1dKGh0dHBzOi8vZ2l0aHViLmNvbS9RaW5nWXVuQS9hbnN3ZXItbWUtd2l0aC1odG1sL3JlbGVhc2VzL2Rvd25sb2FkL3YwLjQuMTQvYmVuY2gtY29ycHVzLTIwMjYtMTAtMDcuemlwKeOAguiKsei0uemZjeW+l+avlCB0b2tlbiDlsJHvvIzov5nph4znuqbkvr/lrpwgMTUl77yM5Zug5Li65q+P5LiA6L2u6YO96L+Y6KaB6K+757O757uf5o+Q56S644CB5L2g55qE6Zeu6aKY5ZKM5a+56K+d6K6w5b2V77yM55So5LiN55SoIHNraWxsIOmDveS4gOagt+OAguivpuingVvoirHotLnpg73oirHlnKjlk6pdKGJlbmNoL1JFQURNRS5tZCN3aGVyZS10aGUtY29zdC1nb2VzKeOAggoK6Kej6YeK6KeG6aKR55yB5b6X5pu05aSa77ya5ZyoW+S4gOasoeWwj+a1i+ivlV0oYmVuY2gvUkVBRE1FLm1kI2V4cGxhaW5lci12aWRlb3Mp6YeM77yM6L6T5Ye6IHRva2VuIOWwkee6piAxOCDlgI3vvIzlv6vnuqYgMTIg5YCN44CCCgojIyDlronoo4UKCumcgOimgeacrOacuuijheaciSBbTm9kZS5qc10oaHR0cHM6Ly9ub2RlanMub3JnLykgMjAg5oiW5pu06auY54mI5pys44CC5LiN6ZyA6KaBIGBucG0gaW5zdGFsbGDvvIxDTEkg5bey57uP5omT5YyF5ZyoIHNraWxsIOmHjOS6huOAggoKIyMjIOiuqSBBZ2VudCDluK7kvaDoo4XvvIjmjqjojZDvvIkKCuaKiuS4i+mdoui/meauteivneeymOi0tOe7meS9oOeahCBBZ2VudOOAgkNsYXVkZSBDb2Rl44CBQ29kZXjjgIFDdXJzb3LjgIFPcGVuQ29kZSDpg73lj6/ku6XvvJoKCj4g5biu5oiR5a6J6KOFIEFuc3dlciBtZSB3aXRoIEhUTUzvvJror7sgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1FpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWwvbWFpbi9JTlNUQUxMLm1k77yM54Wn552A5YGa44CCCgpbSU5TVEFMTC5tZF0oSU5TVEFMTC5tZCkg5piv5YaZ57uZIEFnZW50IOeci+eahOOAguWug+WcqCBDbGF1ZGUgQ29kZSDph4zoo4Xmj5Lku7bvvIzlnKjlhbbku5YgQWdlbnQg6YeM6KOFIHNraWxs77yM5bey5pyJ5a6J6KOF5Lya5L+d55WZ77yM5YWo56iL5LiN5ZCR5L2g5o+Q6Zeu77yM55SoIlRDUCDkuInmrKHmj6HmiYsi6aG16Z2i6aqM6K+B5ZCO57uZ5L2g5LiA5Lu95rGH5oql44CC5aaC5p6c5L2g55qEIEFnZW50IOaJk+S4jeW8gOmTvuaOpe+8jOeUqCBgbnB4IC15IHNraWxscyBhZGQgUWluZ1l1bkEvYW5zd2VyLW1lLXdpdGgtaHRtbCAtZyAteSAtYSA85L2g55qEIEFnZW50IOWQjT5g77yIQ2xhdWRlIENvZGUg5pivIGAtYSBjbGF1ZGUtY29kZWDvvInjgIIKCiMjIyBDbGF1ZGUgQ29kZSDmj5Lku7YKCuWcqCBDbGF1ZGUgQ29kZSDph4zmiafooYzvvJoKCmBgYAovcGx1Z2luIG1hcmtldHBsYWNlIGFkZCBRaW5nWXVuQS9hbnN3ZXItbWUtd2l0aC1odG1sCi9wbHVnaW4gaW5zdGFsbCBhbnN3ZXItbWUtd2l0aC1odG1sQGFuc3dlci1tZS13aXRoLWh0bWwKYGBgCgojIyMgRGVlcFNlZWsgSGFybmVzcyDmj5Lku7YKCuWcqOe7iOerr+mHjOaJp+ihjOOAguaNouaIkOS9oOWcqOeUqOeahCBwcm9maWxl77yM6Ieq5bim55qE5pivIGB3ZWJg77yaCgpgYGBiYXNoCmRzaCBwbHVnaW4gLS1wcm9maWxlIHdlYiBhZGQgZ2l0aHViOlFpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWwKYGBgCgojIyMg5LiA5p2h5ZG95LukCgpgYGBiYXNoCm5weCBza2lsbHMgYWRkIFFpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWwKYGBgCgrlroPkvJrpl67kvaDoo4XliLDlk6rkuKogQWdlbnTjgILlronoo4XlmajmnaXoh6ogW3ZlcmNlbC1sYWJzL3NraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL3ZlcmNlbC1sYWJzL3NraWxscynvvIzmlK/mjIEgNzAg5aSa56eNIEFnZW5044CCCgo8ZGV0YWlscz4KPHN1bW1hcnk+5omL5Yqo5a6J6KOFPC9zdW1tYXJ5PgoK5oqKIGBza2lsbHMvYW5zd2VyLW1lLXdpdGgtaHRtbGAg6L+Z5Liq55uu5b2V5pS+6L+b5L2g55qEIEFnZW50IOeahCBza2lsbCDnm67lvZXlsLHooYzjgILku6UgQ2xhdWRlIENvZGUg5Li65L6L77yaCgpgYGBiYXNoCmdpdCBjbG9uZSAtLWRlcHRoIDEgaHR0cHM6Ly9naXRodWIuY29tL1FpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWwuZ2l0IC90bXAvYW5zd2VyLW1lLXdpdGgtaHRtbApjcCAtUiAvdG1wL2Fuc3dlci1tZS13aXRoLWh0bWwvc2tpbGxzL2Fuc3dlci1tZS13aXRoLWh0bWwgfi8uY2xhdWRlL3NraWxscy9hbnN3ZXItbWUtd2l0aC1odG1sCmBgYAoK5YW25LuWIEFnZW50IOeahCBza2lsbCDnm67lvZXvvJpDb2RleCDmmK8gYH4vLmNvZGV4L3NraWxscy9g77yMQ3Vyc29yIOaYryBgfi8uY3Vyc29yL3NraWxscy9g77yMT3BlbkNvZGUg5pivIGB+Ly5jb25maWcvb3BlbmNvZGUvc2tpbGwvYOOAggoKPC9kZXRhaWxzPgoK6KOF5aW95ZCO5LiN6ZyA6KaB5Lu75L2V6YWN572u44CCKirlu7rorq7miZPlvIBb6auY6aKR5qih5byPXSgj6auY6aKR5qih5byP5o6o6I2QKSoq77yaQWdlbnQg5Lya57uZ5q+P5Liq57uT6K666YO96ZmE5LiA6aG177yM6ICM5LiN5Y+q5piv5aSN5p2C6Zeu6aKY44CC5Y+q6ZyA6KaB5Zyo6KeE5YiZ5paH5Lu26YeM5Yqg5LiA5p2h6KeE5YiZ44CCCgojIyDkvaDor7Tku4DkuYjvvIzkvJrlvpfliLDku4DkuYgKCnwg5L2g6K+0IHwg5L2g5Lya5b6X5YiwIHwKfCA6LS0tIHwgOi0tLSB8CnwgIuiusuiusiBUQ1Ag5LiJ5qyh5o+h5omLIiB8IOaXtuW6j+WbvuOAgeeKtuaAgei/geenu+WbvuOAgeagh+W/l+S9jeWvueeFp+ihqCB8CnwgIui/meS4quS7k+W6k+eahOaooeWdl+aYr+aAjuS5iOe7hOe7h+eahCIgfCDnm67lvZXnu5PmnoTmoJHvvIzliqDkuIDlvKDmqKHlnZfosIPnlKjlhbPns7vlm74gfAp8ICJSZWRpcyDlkowgTWVtY2FjaGVkIOaAjuS5iOmAiSIgfCDlpJrnu7Tlr7nmr5TooajvvIznlKgg4pyTIOKclyDmoIflh7rlt67lvILvvIzmnIDlkI7nu5nnu5PorrogfAp8ICLov5nmrrXmlofmoYjlk6rph4zlhpnlvpfkuI3lpb0iIHwg6YCQ5Y+l5qCH5rOo77yM5qCH5Ye66Zeu6aKY6K+N5ZKM5pS55rOVIHwKfCAiS3ViZXJuZXRlcyDmmK/mgI7kuYjlj5HlsZXotbfmnaXnmoQiIHwg5pe26Ze057q/77yM5YWz6ZSu6IqC54K56auY5LquIHwKfCAi57uZ57yT5a2Y5pS56YCg5YGa5Liq5pa55qGIIiB8IOebtOaOpeW8leeUqOaWh+S7tumHjOeahOecn+WunuS7o+egge+8jOW+heWumueahOmXrumimOWBmuaIkOmAiemhue+8jOWcqOmhtemdouS4iuWwseiDveWbnuetlCB8CnwgImBsc2Ag5oCO5LmI55yL6ZqQ6JeP5paH5Lu2IiB8IOS4jeWHuumhtemdouOAguS4gOWPpeivneiDveivtOa4heeahOmXrumimOeFp+W4uOWbnuetlCB8CgropoHkuI3opoHlh7rpobXpnaLnlLEgQWdlbnQg5Yik5pat77ya5qaC5b+15LmL6Ze05YWz57O75aSN5p2C44CB5pyJ5aSa5q2l5rWB56iL44CB6KaB5YGa5aSa57u05a+55q+U77yM5omN5Lya5Ye66aG16Z2i44CC5L2g5Lmf5Y+v5Lul55u05o6l6K+0IueUqCBIVE1MIOiusuS4gOS4i+KApuKApiLjgIIKCumhtemdouS/neWtmOWcqCBgfi8uYW5zd2VyLW1lLXdpdGgtaHRtbC9wYWdlcy9g44CC6aG16Z2i5Y+z5LiK6KeS5Y+v5Lul5YiH5o2i5Li76aKY44CB5YiH5o2i5Lqu5pqX44CB5rGH5oC75L2g55qE5Zue5aSN77yM5Lmf5Y+v5Lul5aSN5Yi255Sf5oiQ6L+Z5LiA6aG155qEIE1hcmtkb3duIOWOn+eov+OAggoKIyMg5ZKMIEFyY2hpZnnjgIFHZW5VSSDmj5Lku7bmnInku4DkuYjkuI3lkIzvvJ8KCltBcmNoaWZ5XShodHRwczovL2dpdGh1Yi5jb20vdHQtYTFpL2FyY2hpZnkpIOagueaNruS4gOS7vSBKU09OIOinhOagvOeUu+S4gOW8oOWPr+S6pOS6kueahOWbvuOAgltkc2gtZ2VudWldKGh0dHBzOi8vZ2l0aHViLmNvbS9vbWRzaC1kZXYvZHNoLWdlbnVpKSDov5nnsbsgR2VuVUkg5o+S5Lu25Zyo5p+Q5LiA5Liq6IGK5aSp5bqU55So6YeM5pi+56S657uE5Lu244CC6L+Z5LiqIHNraWxsIOaKiuaVtOS4qumXrumimOetlOaIkOS4gOmhte+8muato+aWh+OAgeihqOagvOOAgeS7o+eggeWSjOWbvumDveacie+8jOaooeWei+WPquWGmeS4gOS7vSBNYXJrZG93biDnqL/ku7bvvIzku7vkvZXog73ov5DooYwgc2hlbGwg5ZG95Luk55qEIEFnZW50IOmDveiDveeUqOOAguivpuingVvlrozmlbTlr7nmr5RdKGRvY3MvY29tcGFyZS56aC1DTi5tZCnjgIIKCiMjIOino+mHiuinhumikQoKS2FycGF0aHkg6K+055qEIueQhuinoyBMTE0g6L6T5Ye6IumYtuair++8jOacgOWQjuS4gOe6p+aYryAzQmx1ZTFCcm93biDpo47moLznmoTop6Pph4rop4bpopHjgILnm7TmjqXor7Qi57uZIFRDUCDmj6HmiYvlgZrkuKogM2IxYiDpo47moLznmoTop4bpopEi5bCx6KGM44CCCgo8cCBhbGlnbj0iY2VudGVyIj48aW1nIHNyYz0iZG9jcy9pbWFnZXMvdmlkZW8temgucG5nIiBhbHQ9ImJsdWVwcmludCDpo47moLzop6Pph4rop4bpopHkuK3nmoTlm5vluKfvvJrniYflpLTjgIHpq5jkuq4gU2VydmVyIOeahOaXtuW6j+WbvuOAgea1geeoi+WbvuOAgeWvueavlOihqCIgd2lkdGg9IjgyMCI+PC9wPgoKQWdlbnQg5YaZ55qE56i/5Lu25ZKM6aG16Z2i56i/5LiA5qC377yM5Y+q5piv5aSa5LqG5peB55m977yM5q+P6KGM5LiA5ouN77yaCgpgYGBgbWFya2Rvd24KIyMg5Lik56uv6YO95Zyo562J5b6FCmBgYHNlcXVlbmNlCkNsaWVudCAtPiBTZXJ2ZXI6IFNZTgpTZXJ2ZXIgLT4gQ2xpZW50OiBTWU4tQUNLCmBgYAo+IOWFiOaYr+WuouaIt+err+W8gOWPo++8jOWPkeS4gOS4qiBTWU7vvIzmhI/mgJ3mmK8i5oiR5oOz6Lef5L2g5bu65Liq6L+e5o6lIuOAggo+IFtTZXJ2ZXJdIOWQrOWIsOS6hu+8jOWbnuS4gOS4qiBTWU4tQUNL77yaIuaUtuWIsO+8jOaIkei/mei+ueS5n+ayoemXrumimOOAgiIKYGBgYAoKYGFtIHZpZGVvYCDmiorlroPlgZrmiJDkuIDkuKrmkq3mlL7pobXvvJrlm77pmo/ml4Hnmb3kuIDmraXmraXnlLvlh7rmnaXvvIzplZzlpLTot5/nnYDmlrnmi6zlj7fph4znmoToioLngrnotbDjgILphY3pn7PlhoXltYzlnKjpobXpnaLph4zvvIznprvnur/kuZ/og73mkq3jgILmkq3mlL7lmajluKbnq6DoioLmoI/vvIjlnKjlnLrmma/kuYvpl7Tot7PovazvvInjgIHlgI3pgJ/mjInpkq7vvIzku6Xlj4rkuIDkuKrlr7zlh7rmjInpkq4g4oCU4oCUIOWQjOS4gOS4quinhumikeeUsea1j+iniOWZqOiHquW3see8lueggeW5tuS4i+i9ve+8iOacrOWcsOaWh+S7tuaIliBgbG9jYWxob3N0YCDmiZPlvIDljbPlj6/vvIzkuI3pnIDopoEgZmZtcGVn77yJ44CC5YqgIGAtLW1wNGAg5Y+m5a2YIE1QNCDmlofku7bvvIjpnIDopoEgZmZtcGVn77yJ77yM5YqgIGAtLXdlYm1gIOWPpuWtmOeUsemhtemdouiHquW3see8lueggeeahCBXZWJNIOaWh+S7tu+8iOS4jemcgOimgSBmZm1wZWfvvInjgILlj6rmnInkvaDopoHop4bpopHml7YgQWdlbnQg5omN5Lya5YGa44CC57uG6IqC6KeBW+ino+mHiuinhumikeeahOe7huiKgl0oZG9jcy92aWRlby56aC1DTi5tZCnjgIIKCiMjIOmFjee9rgoK55So5pac5p2g5ZG95Luk5pS56YWN572u77yM5LiN55So5omL5Yqo57yW6L6R6YWN572u5paH5Lu244CCCgp8IOWcqOWTqumHjCB8IOaAjuS5iOaUuSB8CnwgOi0tLSB8IDotLS0gfAp8IENsYXVkZSBDb2Rl77yI5o+S5Lu25a6J6KOF77yJIHwgYC9hbnN3ZXItbWUtd2l0aC1odG1sOmNvbmZpZ2Ag5Lya6Zeu5L2g6KaB5pS55LuA5LmI77ybYC9hbnN3ZXItbWUtd2l0aC1odG1sOmNvbmZpZyBvcGVuIG9mZmAg55u05o6l5pS5IHwKfCDku7vmhI8gQWdlbnQgfCBgL2Fuc3dlci1tZS13aXRoLWh0bWwgY29uZmlnIG9wZW4gb2ZmYO+8jOaIluiAheebtOaOpeivtCLliKvlho3oh6rliqjlvLnmtY/op4jlmajkuoYiIHwKfCDnu4jnq68gfCBgYW0gY29uZmlnYCDmn6XnnIvvvIxgYW0gY29uZmlnIHNldCBvcGVuIG9mZmAg5L+u5pS577yMYGFtIGNvbmZpZyByZXNldGAg5oGi5aSN6buY6K6kIHwKCumFjee9rumhueaciSBgb3BlbmDvvIjoh6rliqjmiZPlvIDmtY/op4jlmajvvInjgIFgdGhlbWVg44CBYG1vZGVg77yI5Lqu6Imy5oiW5pqX6Imy77yJ44CBYHN0eWxlYO+8iOWGmeS9nOajgOafpe+8ieOAgWB1cGRhdGVfY2hlY2tg44CBYGNsb3NlX2FmdGVyX3JlcGx5YO+8iOWkjeWItuWbnuWkjeWQjuWFs+mXreagh+etvumhte+8ieWSjCBgdm9pY2Vg77yI6KeG6aKR6YWN6Z+z77yJ44CC6buY6K6k5YC85ZKM5Y+v6YCJ5YC86KeBW+WPguiAg10oZG9jcy9yZWZlcmVuY2UuemgtQ04ubWQj6YWN572uKeOAggoKIyMg6auY6aKR5qih5byP77yI5o6o6I2Q77yJCgrmiZPlvIDpq5jpopHmqKHlvI/lkI7vvIwqKuavj+S4que7k+iuuumDveS8mumZhOS4gOmhtSoq77ya5Y+q6KaB6L+Z5LiA6L2u57uZ5Ye65LqG57uT6K6644CB5oC757uT44CB5pa55qGI5oiW5a+55q+U77yM5ZOq5oCV5Zue562U5b6I55+t77yMQWdlbnQg5Lmf5Lya6aG65omL5Ye65LiA6aG1IDLvvZ40IOS4qumdouadv+eahOWwj+mhtemdou+8jOW5tuWcqOWbnuWkjeacgOWQjumZhOS4iui3r+W+hOOAgui/meS6m+mhtemdouWPqueUn+aIkOOAgeS4jeW8ueWHuu+8jOS4jeS8muaJk+aWreS9oOaJi+S4iueahOS6i+OAgumXsuiBiuOAgeayoeaciee7k+iuuueahOS4gOS4pOWPpeivneS4jeWPl+W9seWTjeOAgkNsYXVkZSBDb2RlIOWkhOS6jiBwbGFuIOaooeW8j+aXtuS4jeS8muWHuumhtemdouOAggoK6buY6K6k5piv5YWz55qE44CC5bu66K6u5omT5byA77ya5LiN55So5q+P5qyh5byA5Y+j6KaB6aG16Z2i77yM55+t57uT6K665Lmf5ZKM6ZW/56+H5LiA5qC35aW96K+744CC6aG16Z2i5Lya5aCG5ZyoIGB+Ly5hbnN3ZXItbWUtd2l0aC1odG1sL2Ag6YeM77yM55SoIGBhbSBjbGVhbmAg5riF55CG44CC5oOz5omT5byA77yM5oqK5LiL6Z2i6L+Z5q616K+d57KY6LS057uZ5L2g55qEIEFnZW5077yM6K6p5a6D5YaZ6L+b6Ieq5bex55qE6KeE5YiZ5paH5Lu277yI5q+U5aaCIGB+Ly5jbGF1ZGUvQ0xBVURFLm1kYCDmiJYgYEFHRU5UUy5tZGDvvInvvJoKCj4g5biu5oiR5omT5byAIEFuc3dlciBtZSB3aXRoIEhUTUwg55qE6auY6aKR5qih5byP77ya5Zyo5L2g55qE5YWo5bGA6KeE5YiZ5paH5Lu26YeM5Yqg5LiA5p2h6KeE5YiZ4oCU4oCUIlthbnN3ZXItbWUtd2l0aC1odG1sIGFsd2F5cy1vbl0g5Y+q6KaB5Zue5aSN6YeM57uZ5Ye65LqG57uT6K6644CB5oC757uT44CB5pa55qGI44CB5a+55q+U44CB6K+E5a6h5oiW6K6y6Kej77yM5bCx5ZCM5pe255SoIGFuc3dlci1tZS13aXRoLWh0bWwgc2tpbGwg55Sf5oiQ5LiA6aG1IEhUTUzvvIjml6XluLjnu5PorrrnlKggMu+9njQg5Liq6Z2i5p2/77yJ77yM5YWI5riy5p+T6aG16Z2i77yM5YaN5YaZ5paH5a2X5Zue5aSN77yM5Zue5aSN5pyA5ZCO6ZmE5LiK6aG16Z2i55qEIGZpbGU6Ly8g6ZO+5o6l77yM5LiN6KaB5YWI5YaZ5paH5a2X5YaN5riy5p+T44CC5ZOq5oCV5Zue562U5b6I55+t5Lmf6KaB5Ye677yM5LiN6KaB5Zug5Li6562U5qGI5LiN6ZW/5bCx6Lez6L+H44CC5riy5p+T5pe25YqgIC0tbm8tb3Blbu+8jOS4jeimgeW8ueWHuua1j+iniOWZqOOAgumXsuiBiuOAgeayoeaciee7k+iuuueahOS4gOS4pOWPpeivneOAgee6r+WRveS7pOi+k+WHuuOAgeaIkeimgeaxgue6r+aWh+acrOaXtumZpOWkluOAgiIKCuaDs+WFs+aOie+8jOaKiui/meadoeinhOWImeWIoOaOieWNs+WPr+OAguaDs+iuqemhtemdouWwkeS4gOeCue+8n+ingVvlsJHkuIDngrnkuLvliqhdKGRvY3MvcmVmZXJlbmNlLnpoLUNOLm1kI+WwkeS4gOeCueS4u+WKqCnjgIIKCiMjIOabtOaWsOS4jua4heeQhgoK6ZyA6KaB5omL5Yqo5pu05paw44CCQWdlbnQg5q+P5ZGo5ZCRIEdpdEh1YiDmn6XkuIDmrKHmnIDmlrDniYjmnKzlj7fvvIzmnInmlrDniYjmnKzlsLHlkYror4nkvaDvvIzkuI3kvJrkuIrkvKDku7vkvZXlhoXlrrnjgILmg7Pmm7TmlrDvvIzlr7kgQWdlbnQg6K+0IuabtOaWsOS4gOS4iyBhbnN3ZXItbWUtd2l0aC1odG1sIuOAgumhtemdouS8muWghuWcqCBgfi8uYW5zd2VyLW1lLXdpdGgtaHRtbC9gIOmHjO+8jOivtCLmuIXnkIbkuIDkuIvpobXpnaIi77yMQWdlbnQg5Lya5YWI6Zeu5L2g5YaN5Yig44CC5YW25LuW5a6J6KOF5pa55byP5ZKM5YWo6YOo6YCJ6aG56KeBW+WPguiAg10oZG9jcy9yZWZlcmVuY2UuemgtQ04ubWQj5pu05paw5LiO5riF55CGKeOAggoKIyMg5Li65LuA5LmI5YGa6L+Z5LiqCgpLYXJwYXRoeSDlj5Hov4db5LiA5p2h5o6o5paHXShodHRwczovL3guY29tL2thcnBhdGh5L3N0YXR1cy8yMTA1ODE5MzAzNDcxOTc2NDc5KeOAguWkp+aEj+aYryBMTE0g5bmy55qE5rS76LaK5p2l6LaK5aSa77yM5Lq65Y+N6ICM6LaK5p2l6LaK6Zq+6Lef5LiK5a6D55qE6L6T5Ye644CC5q+U6LW36K+75LiA5aSn5q615paH5a2X77yM55yL5LiA5byg5Zu+44CB5LiA6aG1572R6aG16KaB6L275p2+5b6X5aSa44CCCgrmiJHor5Xov4forqkgQWdlbnQg55u05o6l55SoIEhUTUwg5Zue562U6Zeu6aKY44CC6aG16Z2i5LiN6ZSZ77yM5bCx5piv5aSq5oWi77ya5LiA6aG15YOP5qC355qE572R6aG16KaB562J5LiA5Lik5YiG6ZKf77yM5aSn5Y2K5pe26Ze06Iqx5Zyo6L6T5Ye65Yeg55m+6KGM5q+P5qyh6YO95beu5LiN5aSa55qEIENTUyDkuIrjgILnlLvmtYHnqIvlm77mm7Tpurvng6bvvJrmqKHlnovlvpfoh6rlt7HnrpcgU1ZHIOWdkOagh++8jOeureWktOe7j+W4uOaMh+WIsOepuueZveWkhOOAggoK5omA5LulIEFuc3dlciBtZSB3aXRoIEhUTUwg5oqK6L+Z5Lqb5rS75LuO5qih5Z6L5omL6YeM5ou/6LWw5LqG44CC5qih5Z6L5Y+q5YaZ5YaF5a6577yM5o6S54mI44CB6YWN6Imy44CB55S75Zu+6YO95Lqk57uZIENMSeOAggoKIyMg5Y6f55CGCgrmqKHlnovlj6rpnIDopoHlhpnov5nmoLfkuIDku73nqL/ku7bvvJoKCmBgYGBtYXJrZG93bgotLS0KdGl0bGU6IFRDUCDkuInmrKHmj6HmiYvkuI7lm5vmrKHmjKXmiYsKLS0tCiMjIEEg5LiJ5qyh5o+h5omLIHtzcGFuPTJ9CmBgYHNlcXVlbmNlIG51bQrlrqLmiLfnq68gLT4g5pyN5Yqh5ZmoOiBTWU4sIHNlcT14CuacjeWKoeWZqCAtPiDlrqLmiLfnq686IFNZTitBQ0ssIHNlcT15LCBhY2s9eCsxCuWuouaIt+erryAtPiDmnI3liqHlmag6IEFDSywgYWNrPXkrMQpub3RlIOWuouaIt+errywg5pyN5Yqh5ZmoOiBFU1RBQkxJU0hFRApgYGAKCiMjIEMg54q25oCB6L+B56e7IHtzcGFuPTJ9CmBgYGZsb3cgTFIKKENMT1NFRCkgLT4gTElTVEVOOiDooqvliqjmiZPlvIAKTElTVEVOIC0+IFNZTl9SQ1ZEOiDmlLYgU1lOIC8g5Y+RIFNZTitBQ0sKU1lOX1JDVkQgLT4gKkVTVEFCTElTSEVEOiDmlLYgQUNLCmBgYApgYGBgCgrliankuIvnmoTpg73nlLEgQ0xJIOWujOaIkO+8mumAieaooeadv+OAgeaOkumdouadv+OAgeWll+S4u+mimO+8jOeUqCBbZGFncmVdKGh0dHBzOi8vZ2l0aHViLmNvbS9kYWdyZWpzL2RhZ3JlKSDnrpfmtYHnqIvlm77lnZDmoIfvvIzmjInmoIfnrb7lrr3luqbmi4nlvIDml7bluo/lm77pl7Tot53jgILlrozmlbTnqL/ku7YgW2V4YW1wbGVzL3RjcC5tZF0oZXhhbXBsZXMvdGNwLm1kKSDkvJrnlJ/miJDov5nkuIDpobXvvJoKCjxwIGFsaWduPSJjZW50ZXIiPgogIDxpbWcgc3JjPSJkb2NzL2ltYWdlcy90Y3AucG5nIiBhbHQ9IlRDUCDnpLrkvovpobXpnaIiIHdpZHRoPSIxMDAlIj4KPC9wPgoKIyMg54m55oCnCgotICoq54mI6Z2i55Sx5Luj56CB6K6h566XOioqIOmdouadv+S9jee9ruWSjOWbvuW9ouWdkOagh+mDveaYr+eul+WHuuadpeeahO+8jOS4jemdoOaooeWei+eMnOOAguaWh+Wtl+S4jeS8muiiq+aIquaWre+8jOe9keagvOmHjOS5n+S4jeS8mueVmeepuua0nuOAggotICoq5Ye66ZSZ6IO96Ieq5bex5pS5OioqIOeov+S7tuWGmemUmeaXtu+8jENMSSDkvJrnu5nlh7rooYzlj7fjgIHnu4Tku7blkI3lkozkuIDmrrXmraPnoa7npLrkvovjgIJBZ2VudCDnhafnnYDmlLnkuIDmrKHlsLHooYzjgIIKLSAqKuS4ieWll+S4u+mimDoqKiBibHVlcHJpbnQg5piv5Zu+57q46aOO77yMc2hhZGNuIOaYr+WNoeeJh+mjju+8jHBhcGVyIOmAguWQiOivu+mVv+aWh+OAgum7mOiupOeUsSBDTEkg5oyJ5YaF5a656Ieq5Yqo6YCJ77ya6ZW/5paH55SoIHBhcGVy77yM5pyJ5Zu+6KGo55SoIGJsdWVwcmludOOAguS4ieWll+mDveW4puS6ruiJsuWSjOaal+iJsu+8jOmhtemdouS4iuWPr+S7peeUqOS4i+aLieahhumaj+aXtuWIh+aNou+8jOS5n+WPr+S7pea3u+WKoOS9oOiHquW3seeahOS4u+mimO+8jOaIluiAheS7jlvkuLvpopjlupNdKGh0dHBzOi8vYW5zd2VyLW1lLXdpdGgtaHRtbC5jb20vemgvdGhlbWVzLynph4zlj5bkuIDkuKrjgIIKLSAqKuWNleaWh+S7tuOAgembtuS+nei1ljoqKiDkuqfnianmmK/kuIDkuKogYC5odG1sYO+8jOS4jeW8leeUqOS7u+S9lSBDRE4g5oiW5aSW6YOo5a2X5L2T44CC5pat572R5Lmf6IO95omT5byA77yM5Y+R57uZ5Yir5Lq65Lmf6IO955yL44CCCi0gKirlpJror63oqIA6Kiog566A5L2T5Lit5paH44CB57mB5L2T5Lit5paH44CB6Iux5paH5ZKM5pel5paH6YO95pyJ5a+55bqU55qE5oyJ6ZKu5ZKM5a2X5L2T44CC5YW25LuW6K+t6KiA5Lmf6IO955So77yM5oyJ6ZKu5piv6Iux5paH44CC6K+m6KeBW+ivreiogF0oZG9jcy9yZWZlcmVuY2UuemgtQ04ubWQj6K+t6KiAKeOAggotICoq5YaZ5L2c5qOA5p+lOioqIOaMiSBBU0QtU1RFMTAwIOeahOaAnei3r+ajgOafpeeov+S7tumHjOeahOaWh+Wtl+OAguWPpeWtkOWkqumVv+OAgeeUqOivjeWkque7leOAgeiiq+WKqOivreaAgemDveS8muaPkOmGkuOAgum7mOiupOWPquaPkOmGku+8jOS4jeaLpuedgOOAggotICoq55yf5a6e5Luj56CB77yM5LiN6Z2g5omL5oqEOioqIOS7o+eggeWdl+WPr+S7peebtOaOpeW8leeUqOS9oOaWh+S7tumHjOeahOWHoOihjO+8iGBzcmM9YCBgbGluZXM9YO+8ie+8jOmhtemdouS4iueahOS7o+eggeWwseaYr+ecn+WunuS7o+eggeOAguW9k+WJjeebruW9leS7peWklueahOaWh+S7tuWSjOWtmOaUvuWvhumSpeeahOaWh+S7tuS8muiiq+aLkue7neOAggotICoq5Zyo6aG16Z2i5LiK5Zue5aSNOioqIOWPr+S7peWvueS7u+aEj+mdouadv+WGmeivhOiuuu+8jOS5n+WPr+S7peWcqCBBZ2VudCDmj5Dlh7rnmoTlhrPlrprvvIhgYXNrYO+8iemHjOmAiemAiemhueOAgueCuSLlm57lpI0i5oyJ6ZKu77yM5L2g55qE6YCJ5oup5ZKM6K+E6K665Lya5ZCI5oiQ5LiA5q615paH5a2X77yM6LS05Zue57uZIEFnZW50IOWNs+WPr+OAggotICoq6IO95om+5Zue5Y6f56i/OioqIOavj+mhtemDveWGheW1jOS6hueUn+aIkOWug+eahCBNYXJrZG93buOAgueCuSLlpI3liLbmupDnqL8i5bCx6IO95ou/5Zue5p2l5pS544CCCgo8dGFibGU+CiAgPHRyPgogICAgPHRkIHdpZHRoPSI1MCUiPjxpbWcgc3JjPSJkb2NzL2ltYWdlcy9zdGUxMDAucG5nIiBhbHQ9ImJsdWVwcmludCDlm77nurjpo44iPjwvdGQ+CiAgICA8dGQgd2lkdGg9IjUwJSI+PGltZyBzcmM9ImRvY3MvaW1hZ2VzL2FyY2hpdGVjdHVyZS1kYXJrLnBuZyIgYWx0PSLljZXmoI/mqKHmnb/vvIxzaGFkY24g5pqX6ImyIj48L3RkPgogIDwvdHI+CiAgPHRyPgogICAgPHRkIGFsaWduPSJjZW50ZXIiPjxzdWI+Ymx1ZXByaW50IOWbvue6uOmjju+8iDxhIGhyZWY9ImV4YW1wbGVzL3N0ZTEwMC5tZCI+ZXhhbXBsZXMvc3RlMTAwLm1kPC9hPu+8iTwvc3ViPjwvdGQ+CiAgICA8dGQgYWxpZ249ImNlbnRlciI+PHN1Yj7ljZXmoI/plb/mlofmqKHmnb8gKyDmmpfoibLvvIg8YSBocmVmPSJleGFtcGxlcy9hcmNoaXRlY3R1cmUubWQiPmV4YW1wbGVzL2FyY2hpdGVjdHVyZS5tZDwvYT7vvIk8L3N1Yj48L3RkPgogIDwvdHI+CjwvdGFibGU+CgojIyDnu4Tku7YKCkFnZW50IOS8muaMieS/oeaBr+eahOW9oueKtuaMkee7hOS7tu+8mgoKfCDnu4Tku7YgfCDpgILlkIjku4DkuYggfAp8IDotLS0gfCA6LS0tIHwKfCBgZmxvd2AgfCDmnrbmnoTjgIHosIPnlKjpk77jgIHlhrPnrZbliIbmlK/jgILoh6rliqjluIPlsYDvvIzmlK/mjIHliIbnu4TjgIHliKTmlq3moYbjgIHmlbDmja7lupMgfAp8IGBlcmAgfCDmlbDmja7mqKHlnovvvJrlrp7kvZPluKblrZfmrrXvvIhQSyAvIEZLIC8gVUvvvInlkozpuKbniKrlvI/lhbPns7vov57nur8gfAp8IGBzZXF1ZW5jZWAgfCDlh6DmlrnkuYvpl7TmjInml7bpl7Tpobrluo/mnaXlm57lj5Hmtojmga8gfAp8IGB0cmVlYCB8IOebruW9leOAgeaooeWdl+OAgeWIhuexu+S9k+ezuyB8CnwgYHRpbWVsaW5lYCB8IOWOhuWPsuOAgeeJiOacrOOAgemYtuautSB8CnwgYGxpbWl0c2AgfCDlvZPliY3lgLzlkozkuIrpmZDnmoTlr7nmr5QgfAp8IGBhbm5vdGAgfCDpgJDor43ngrnor4TkuIDlj6Xor50gfAp8IGBrdmAgfCDlhYPkv6Hmga/jgIHlm77nurjmoIfpopjmoI8gfAp8IGBjYWxsb3V0YCB8IOe7k+iuuuOAgeaPkOekuuOAgeitpuWRiiB8CnwgYGFza2AgfCDpnIDopoHkvaDlnKjpobXpnaLkuIrlgZrnmoTlhrPlrprvvIxBZ2VudCDnmoTlu7rorq7pobnpu5jorqTpgInkuK0gfAp8IOS7o+eggeWdlyB8IOS7juaWh+S7tuW8leeUqOeahOecn+WunuS7o+egge+8iGBzcmM9YCBgbGluZXM9YO+8ie+8jOaIluaJi+WGmeeahOekuuaEj+S7o+eggSB8Cnwg6KGo5qC8IHwg5aSa57u05a+55q+U44CC5Y2V5YWD5qC85YaZIGBva2AgLyBgbm9gIC8gYHdhcm5gIOS8muWPmOaIkCDinJMg4pyXICEgfAoK56i/5Lu25qC85byP77yIZnJvbnRtYXR0ZXLjgIFgc3BhbmDjgIFgcm93c2DjgIHljp/lp4sgYGh0bWxgL2BzdmdgIOWdl++8ieWSjOS4jee7j+i/hyBBZ2VudCDnm7TmjqXnlKjlkb3ku6TooYzvvJrop4Fb5Y+C6ICDXShkb2NzL3JlZmVyZW5jZS56aC1DTi5tZCnjgILmr4/kuKrnu4Tku7bnmoTlrozmlbTlhpnms5XvvJpgYW0gaGVscCA857uE5Lu25ZCNPmDjgIIKCiMjIFNURSDlj5fmjqflhpnkvZzmo4Dmn6UKCltBU0QtU1RFMTAwXShodHRwczovL3d3dy5hc2Qtc3RlMTAwLm9yZy8pIOaYr+S4gOWll+WPl+aOp+iLseivre+8jOacgOaXqeeUqOadpeWGmemjnuacuue7tOS/ruaJi+WGjOOAguWug+eahOinhOWumuW+iOWFt+S9k++8muWPpeWtkOS4jeiDveWkqumVv++8jOS4gOS4quivjeWPquihqOi+vuS4gOS4quaEj+aAne+8jOaTjeS9nOatpemqpOimgeeUqOeliOS9v+WPpeOAgkthcnBhdGh5IOaPkOWIsO+8jOiuqSBMTE0g5oyJ6L+Z5aWX6KeE5YiZ5YaZ77yM6K+76LW35p2l5Lya5riF5qWa5b6I5aSa44CCCgrmr4/mrKHmuLLmn5Ppg73kvJrmo4Dmn6XlhbbkuK3lrrnmmJPnlKjmnLrlmajmo4Dmn6XnmoTpg6jliIbvvJrlj6Xplb/jgIHluLjnlKjor43jgIHooqvliqjor63mgIHvvIzku6Xlj4rkuK3mlofnmoTplJnliKvlrZflkozlkKvns4ror43jgILpu5jorqTlj6rmj5DphpLjgILnlKggYC9hbnN3ZXItbWUtd2l0aC1odG1sOmNvbmZpZyBzdHlsZSBzdHJpY3RgIOiuqeS4jei+vuagh+eahOeov+S7tuS4jeeUn+aIkO+8jOaIluiAheWcqOWNleevh+eov+S7tumHjOWGmSBgc3R5bGU6YOOAguWujOaVtOinhOWImeingVvlj4LogINdKGRvY3MvcmVmZXJlbmNlLnpoLUNOLm1kI+WGmeS9nOajgOafpSnjgIIKCiMjIOW8gOWPkQoKYGBgYmFzaApnaXQgY2xvbmUgaHR0cHM6Ly9naXRodWIuY29tL1FpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWwuZ2l0ICYmIGNkIGFuc3dlci1tZS13aXRoLWh0bWwKbnBtIGluc3RhbGwKbnBtIHRlc3QgICAgICAgICAgIyDot5HmtYvor5UKQU1fRTJFPTEgbnBtIHRlc3QgIyDov57lkIzop4bpopHnq6/liLDnq6/mtYvor5XkuIDotbfot5HvvIjpnIDopoHns7vnu58gVFRT44CBQ2hyb21l44CBZmZtcGVn77yJCm5wbSBydW4gc21va2U6aW5zdGFsbCAjIOeUqCBucHggc2tpbGxzIOecn+WunuWuieijheS4gOasoe+8jOW5tuagoemqjOaPkuS7tua4heWNle+8iOmcgOimgeiBlOe9ke+8iQpucG0gcnVuIGJ1aWxkICAgICAjIOaUueS6hiBzcmMvIOS5i+WQju+8jOmHjeaWsOaJk+WMhSBza2lsbHMvYW5zd2VyLW1lLXdpdGgtaHRtbC9zY3JpcHRzL2FtLm1qcwpucG0gcnVuIHNuYXBzaG90ICAjIOS4jiBvcmlnaW4vbWFpbiDlr7nmr5TnlJ/miJDnmoQgSFRNTO+8iOmHjeaehOS4jeiDveaUueWPmOWug++8iQpgYGAKCue7tOaKpOe6puWumu+8iOeUn+aIkOeahOaJk+WMheaWh+S7tuOAgemhtemdouagvOW8j+OAgeW/q+eFp+avlOWvueOAgeWuoSBQUuOAgeWPkeeJiO+8ieingSBbQ09OVFJJQlVUSU5HLm1kXShDT05UUklCVVRJTkcubWQp44CCCgrov5DooYzml7bkvp3otZblj6rmnInkuKTkuKrvvJpbbWFya2VkXShodHRwczovL2dpdGh1Yi5jb20vbWFya2VkanMvbWFya2VkKSDotJ/otKPop6PmnpAgTWFya2Rvd27vvIxbQGRhZ3JlanMvZGFncmVdKGh0dHBzOi8vZ2l0aHViLmNvbS9kYWdyZWpzL2RhZ3JlKSDotJ/otKPmtYHnqIvlm77luIPlsYDjgILmiZPljIXml7blroPku6zkvJrooqvkuIDotbfmiZPov5sgYGFtLm1qc2DjgIIKCiMjIOekvuWMugoK5pyJ6Zeu6aKY44CB5oOz5YiG5Lqr5YGa5Ye65p2l55qE6aG16Z2i44CB5pyJ5Yqf6IO95bu66K6u77yM5oiW6ICF5Y+q5piv5oOz5omT5Liq5oub5ZG877yM6YO95qyi6L+O5p2l44CCCgotIFtEaXNjb3JkXShodHRwczovL2Rpc2NvcmQuZ2cvc1lRdVJSWk56USkKLSBRUSDnvqTvvJpgMTEyNzA5OTQwN2AKLSBbTElOVVggRE9dKGh0dHBzOi8vbGludXguZG8pIOS4reaWh+W8gOWPkeiAheiuuuWdmwoK5Y+R546wIGJ1ZyDor7fmj5AgW0dpdEh1YiBpc3N1ZV0oaHR0cHM6Ly9naXRodWIuY29tL1FpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWwvaXNzdWVzKeOAggoKIyMgU3RhciDljoblj7IKCjxhIGhyZWY9Imh0dHBzOi8vc3Rhci1oaXN0b3J5LmNvbS8jUWluZ1l1bkEvYW5zd2VyLW1lLXdpdGgtaHRtbCZEYXRlIj4KICA8cGljdHVyZT4KICAgIDxzb3VyY2UgbWVkaWE9IihwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykiIHNyY3NldD0iaHR0cHM6Ly9hcGkuc3Rhci1oaXN0b3J5LmNvbS9zdmc/cmVwb3M9UWluZ1l1bkEvYW5zd2VyLW1lLXdpdGgtaHRtbCZ0eXBlPURhdGUmdGhlbWU9ZGFyayIgLz4KICAgIDxzb3VyY2UgbWVkaWE9IihwcmVmZXJzLWNvbG9yLXNjaGVtZTogbGlnaHQpIiBzcmNzZXQ9Imh0dHBzOi8vYXBpLnN0YXItaGlzdG9yeS5jb20vc3ZnP3JlcG9zPVFpbmdZdW5BL2Fuc3dlci1tZS13aXRoLWh0bWwmdHlwZT1EYXRlIiAvPgogICAgPGltZyBhbHQ9IlN0YXIgSGlzdG9yeSBDaGFydCIgc3JjPSJodHRwczovL2FwaS5zdGFyLWhpc3RvcnkuY29tL3N2Zz9yZXBvcz1RaW5nWXVuQS9hbnN3ZXItbWUtd2l0aC1odG1sJnR5cGU9RGF0ZSIgLz4KICA8L3BpY3R1cmU+CjwvYT4KCiMjIExpY2Vuc2UKCltNSVRdKExJQ0VOU0Up44CC5Li76aKY5Y+v5Lul5YaF5bWM55qEIEJhbmdlcnMg5a2X5L2T5L2/55SoIFtTSUwgT3BlbiBGb250IExpY2Vuc2UgMS4xXShza2lsbHMvYW5zd2VyLW1lLXdpdGgtaHRtbC9saWNlbnNlcy9PRkwtQmFuZ2Vycy50eHQp44CCCg==
+<p align="center">
+  <img src="docs/logo.svg" width="64" height="64" alt="Answer me with HTML logo">
+</p>
+
+<h1 align="center">Answer me with HTML</h1>
+
+<p align="center">
+  <b>极速出页&nbsp;&nbsp;|&nbsp;&nbsp;ASD-STE100&nbsp;&nbsp;|&nbsp;&nbsp;讲解视频&nbsp;&nbsp;|&nbsp;&nbsp;单文件离线</b>
+</p>
+
+<p align="center">
+  <b>一个 Agent Skill：遇到复杂问题，Agent 不再甩给你一堵文字墙，而是给你一页能看懂的 HTML。<br>模型要写的 token，只有它直接手写 HTML 的约 1/8。</b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/QingYunA/answer-me-with-html/releases"><img src="https://img.shields.io/github/v/release/QingYunA/answer-me-with-html?style=flat-square&logo=github&labelColor=16181d&color=2ea44f" alt="Release"></a>
+  <a href="https://github.com/QingYunA/answer-me-with-html/stargazers"><img src="https://img.shields.io/github/stars/QingYunA/answer-me-with-html?style=flat-square&logo=github&labelColor=16181d&color=2ea44f" alt="Stars"></a>
+  <img src="https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Cursor%20%C2%B7%20OpenCode%20%C2%B7%20Pi%20%C2%B7%20DeepSeek%20Harness-2ea44f?style=flat-square&labelColor=16181d" alt="Works with Claude Code, Codex, Cursor, OpenCode, Pi, DeepSeek Harness">
+  <a href="https://www.theagenticleaderboard.com/alternatives/answer-me-with-html/"><img src="https://www.theagenticleaderboard.com/badges/new/answer-me-with-html.svg" alt="The New 100"></a>
+</p>
+
+<p align="center">
+  <a href="https://answer-me-with-html.com/zh/"><b>官网</b></a> · <a href="#安装">安装</a> · <a href="#你说什么会得到什么">示例</a> · <a href="#解释视频">视频</a> · <a href="#高频模式推荐">高频模式</a> · <a href="docs/reference.zh-CN.md">参考文档</a> · <a href="README.md">English</a>
+</p>
+
+<p align="center">
+  <img src="docs/images/text-vs-page-zh.png" alt="同一个 TCP 问题的两种回答：左边是终端里的一堵文字墙，右边是带图表的一页能看懂的页面" width="100%">
+</p>
+
+装好之后，像平时一样提问就行：
+
+```
+> 讲讲 TCP 三次握手和四次挥手
+> 画一下这个仓库的模块关系
+> Redis 和 Memcached 该怎么选
+```
+
+Agent 会写一份很短的 Markdown 稿件，交给 skill 自带的 CLI。大约 50 毫秒后，你就得到一页：
+
+https://github.com/user-attachments/assets/1f13b1fe-70a9-4c39-8530-b12e553e17ea
+
+<p align="center"><sub>24 秒演示，打开声音可以听到配乐。</sub></p>
+
+## Fork 说明：DocReader 自动上传
+
+这个 fork（源自 QingYunA/answer-me-with-html）新增了一个行为：`am render` 生成页面后，会通过 [joesaas/doc-reader](https://github.com/joesaas/doc-reader) 的 AI 接口把页面默认上传到作者的 DocReader 服务器（[Agent 101](https://agent101.uk)），并打印阅读链接。凭证按运行时以 adapter 方式接入：环境变量 `DOC_READER_API_KEY`，或每台机器自己的凭证 adapter（`AM_DOCREADER_ADAPTER`，或 `$AM_HOME/adapters/docreader`；Muse 版 adapter 随 skill 附在 `skills/answer-me-with-html/adapters/`，同一套 skill 可原样装进 Muse、Gemini、Grok Bot 等任意容器）；两者都没有时跳过上传、不影响渲染。关闭方式：`am config set docreader_upload off`、`AM_DOCREADER_UPLOAD=0` 或单次 `--no-upload`。实现见 `src/docreader.js`。
+
+## 为什么不直接让 AI 输出 HTML？
+
+当然可以，现在的模型写 HTML 已经写得不错了。但它写的大部分都不是内容。我们数了 9 页模型直接手写的 HTML，平均 4,893 个 token：
+
+| 页面里的部分 | 占比 | 用这个 skill 后 |
+| :--- | ---: | :--- |
+| SVG 图：坐标和路径 | 47% | 由 CLI 生成 |
+| CSS | 15% | 由 CLI 生成 |
+| HTML 标签 | 17% | 由 CLI 生成 |
+| 正文文字 | 21% | 模型来写，写成 Markdown |
+
+用这个 skill，模型只写一份 Markdown 稿件。同样的问题，稿件平均 612 个 token，**约为手写 HTML 的 1/8**。要写的少，等的时间就短（3 个题目 × 每题 3 次，取中位数，Claude Sonnet 5.5，普通的 Claude Code 环境）：
+
+| | 直接要 HTML | Answer me with HTML | |
+| :--- | ---: | ---: | :--- |
+| 模型要写的 token | 4,893 | **612** | **少 8 倍** |
+| 耗时 | 31 秒 | **12 秒** | **快 2.6 倍** |
+
+<p align="center">
+  <img src="docs/images/plain-vs-skill.png" alt="同一个 TCP 问题的两种做法" width="100%">
+</p>
+
+<p align="center"><sub>同一个问题、同一个模型，两种做法各答一遍，两页都能用。</sub></p>
+
+token 数存在 [bench/corpus/tokens.json](bench/corpus/tokens.json) 里，运行 `node bench/corpus.mjs` 每次都得到同样的数字。页面本身可以[下载](https://github.com/QingYunA/answer-me-with-html/releases/download/v0.4.14/bench-corpus-2026-10-07.zip)。花费降得比 token 少，这里约便宜 15%，因为每一轮都还要读系统提示、你的问题和对话记录，用不用 skill 都一样。详见[花费都花在哪](bench/README.md#where-the-cost-goes)。
+
+解释视频省得更多：在[一次小测试](bench/README.md#explainer-videos)里，输出 token 少约 18 倍，快约 12 倍。
+
+## 安装
+
+需要本机装有 [Node.js](https://nodejs.org/) 20 或更高版本。不需要 `npm install`，CLI 已经打包在 skill 里了。
+
+### 让 Agent 帮你装（推荐）
+
+把下面这段话粘贴给你的 Agent。Claude Code、Codex、Cursor、OpenCode 都可以：
+
+> 帮我安装 Answer me with HTML：读 https://raw.githubusercontent.com/QingYunA/answer-me-with-html/main/INSTALL.md，照着做。
+
+[INSTALL.md](INSTALL.md) 是写给 Agent 看的。它在 Claude Code 里装插件，在其他 Agent 里装 skill，已有安装会保留，全程不向你提问，用"TCP 三次握手"页面验证后给你一份汇报。如果你的 Agent 打不开链接，用 `npx -y skills add QingYunA/answer-me-with-html -g -y -a <你的 Agent 名>`（Claude Code 是 `-a claude-code`）。
+
+### Claude Code 插件
+
+在 Claude Code 里执行：
+
+```
+/plugin marketplace add QingYunA/answer-me-with-html
+/plugin install answer-me-with-html@answer-me-with-html
+```
+
+### DeepSeek Harness 插件
+
+在终端里执行。换成你在用的 profile，自带的是 `web`：
+
+```bash
+dsh plugin --profile web add github:QingYunA/answer-me-with-html
+```
+
+### 一条命令
+
+```bash
+npx skills add QingYunA/answer-me-with-html
+```
+
+它会问你装到哪个 Agent。安装器来自 [vercel-labs/skills](https://github.com/vercel-labs/skills)，支持 70 多种 Agent。
+
+<details>
+<summary>手动安装</summary>
+
+把 `skills/answer-me-with-html` 这个目录放进你的 Agent 的 skill 目录就行。以 Claude Code 为例：
+
+```bash
+git clone --depth 1 https://github.com/QingYunA/answer-me-with-html.git /tmp/answer-me-with-html
+cp -R /tmp/answer-me-with-html/skills/answer-me-with-html ~/.claude/skills/answer-me-with-html
+```
+
+其他 Agent 的 skill 目录：Codex 是 `~/.codex/skills/`，Cursor 是 `~/.cursor/skills/`，OpenCode 是 `~/.config/opencode/skill/`。
+
+</details>
+
+装好后不需要任何配置。**建议打开[高频模式](#高频模式推荐)**：Agent 会给每个结论都附一页，而不只是复杂问题。只需要在规则文件里加一条规则。
+
+## 你说什么，会得到什么
+
+| 你说 | 你会得到 |
+| :--- | :--- |
+| "讲讲 TCP 三次握手" | 时序图、状态迁移图、标志位对照表 |
+| "这个仓库的模块是怎么组织的" | 目录结构树，加一张模块调用关系图 |
+| "Redis 和 Memcached 怎么选" | 多维对比表，用 ✓ ✗ 标出差异，最后给结论 |
+| "这段文案哪里写得不好" | 逐句标注，标出问题词和改法 |
+| "Kubernetes 是怎么发展起来的" | 时间线，关键节点高亮 |
+| "给缓存改造做个方案" | 直接引用文件里的真实代码，待定的问题做成选项，在页面上就能回答 |
+| "`ls` 怎么看隐藏文件" | 不出页面。一句话能说清的问题照常回答 |
+
+要不要出页面由 Agent 判断：概念之间关系复杂、有多步流程、要做多维对比，才会出页面。你也可以直接说"用 HTML 讲一下……"。
+
+页面保存在 `~/.answer-me-with-html/pages/`。页面右上角可以切换主题、切换亮暗、汇总你的回复，也可以复制生成这一页的 Markdown 原稿。
+
+## 和 Archify、GenUI 插件有什么不同？
+
+[Archify](https://github.com/tt-a1i/archify) 根据一份 JSON 规格画一张可交互的图。[dsh-genui](https://github.com/omdsh-dev/dsh-genui) 这类 GenUI 插件在某一个聊天应用里显示组件。这个 skill 把整个问题答成一页：正文、表格、代码和图都有，模型只写一份 Markdown 稿件，任何能运行 shell 命令的 Agent 都能用。详见[完整对比](docs/compare.zh-CN.md)。
+
+## 解释视频
+
+Karpathy 说的"理解 LLM 输出"阶梯，最后一级是 3Blue1Brown 风格的解释视频。直接说"给 TCP 握手做个 3b1b 风格的视频"就行。
+
+<p align="center"><img src="docs/images/video-zh.png" alt="blueprint 风格解释视频中的四帧：片头、高亮 Server 的时序图、流程图、对比表" width="820"></p>
+
+Agent 写的稿件和页面稿一样，只是多了旁白，每行一拍：
+
+````markdown
+## 两端都在等待
+```sequence
+Client -> Server: SYN
+Server -> Client: SYN-ACK
+```
+> 先是客户端开口，发一个 SYN，意思是"我想跟你建个连接"。
+> [Server] 听到了，回一个 SYN-ACK："收到，我这边也没问题。"
+````
+
+`am video` 把它做成一个播放页：图随旁白一步步画出来，镜头跟着方括号里的节点走。配音内嵌在页面里，离线也能播。播放器带章节栏（在场景之间跳转）、倍速按钮，以及一个导出按钮 —— 同一个视频由浏览器自己编码并下载（本地文件或 `localhost` 打开即可，不需要 ffmpeg）。加 `--mp4` 另存 MP4 文件（需要 ffmpeg），加 `--webm` 另存由页面自己编码的 WebM 文件（不需要 ffmpeg）。只有你要视频时 Agent 才会做。细节见[解释视频的细节](docs/video.zh-CN.md)。
+
+## 配置
+
+用斜杠命令改配置，不用手动编辑配置文件。
+
+| 在哪里 | 怎么改 |
+| :--- | :--- |
+| Claude Code（插件安装） | `/answer-me-with-html:config` 会问你要改什么；`/answer-me-with-html:config open off` 直接改 |
+| 任意 Agent | `/answer-me-with-html config open off`，或者直接说"别再自动弹浏览器了" |
+| 终端 | `am config` 查看，`am config set open off` 修改，`am config reset` 恢复默认 |
+
+配置项有 `open`（自动打开浏览器）、`theme`、`mode`（亮色或暗色）、`style`（写作检查）、`update_check`、`close_after_reply`（复制回复后关闭标签页）和 `voice`（视频配音）。默认值和可选值见[参考](docs/reference.zh-CN.md#配置)。
+
+## 高频模式（推荐）
+
+打开高频模式后，**每个结论都会附一页**：只要这一轮给出了结论、总结、方案或对比，哪怕回答很短，Agent 也会顺手出一页 2～4 个面板的小页面，并在回复最后附上路径。这些页面只生成、不弹出，不会打断你手上的事。闲聊、没有结论的一两句话不受影响。Claude Code 处于 plan 模式时不会出页面。
+
+默认是关的。建议打开：不用每次开口要页面，短结论也和长篇一样好读。页面会堆在 `~/.answer-me-with-html/` 里，用 `am clean` 清理。想打开，把下面这段话粘贴给你的 Agent，让它写进自己的规则文件（比如 `~/.claude/CLAUDE.md` 或 `AGENTS.md`）：
+
+> 帮我打开 Answer me with HTML 的高频模式：在你的全局规则文件里加一条规则——"[answer-me-with-html always-on] 只要回复里给出了结论、总结、方案、对比、评审或讲解，就同时用 answer-me-with-html skill 生成一页 HTML（日常结论用 2～4 个面板），先渲染页面，再写文字回复，回复最后附上页面的 file:// 链接，不要先写文字再渲染。哪怕回答很短也要出，不要因为答案不长就跳过。渲染时加 --no-open，不要弹出浏览器。闲聊、没有结论的一两句话、纯命令输出、我要求纯文本时除外。"
+
+想关掉，把这条规则删掉即可。想让页面少一点？见[少一点主动](docs/reference.zh-CN.md#少一点主动)。
+
+## 更新与清理
+
+需要手动更新。Agent 每周向 GitHub 查一次最新版本号，有新版本就告诉你，不会上传任何内容。想更新，对 Agent 说"更新一下 answer-me-with-html"。页面会堆在 `~/.answer-me-with-html/` 里，说"清理一下页面"，Agent 会先问你再删。其他安装方式和全部选项见[参考](docs/reference.zh-CN.md#更新与清理)。
+
+## 为什么做这个
+
+Karpathy 发过[一条推文](https://x.com/karpathy/status/2105819303471976479)。大意是 LLM 干的活越来越多，人反而越来越难跟上它的输出。比起读一大段文字，看一张图、一页网页要轻松得多。
+
+我试过让 Agent 直接用 HTML 回答问题。页面不错，就是太慢：一页像样的网页要等一两分钟，大半时间花在输出几百行每次都差不多的 CSS 上。画流程图更麻烦：模型得自己算 SVG 坐标，箭头经常指到空白处。
+
+所以 Answer me with HTML 把这些活从模型手里拿走了。模型只写内容，排版、配色、画图都交给 CLI。
+
+## 原理
+
+模型只需要写这样一份稿件：
+
+````markdown
+---
+title: TCP 三次握手与四次挥手
+---
+## A 三次握手 {span=2}
+```sequence num
+客户端 -> 服务器: SYN, seq=x
+服务器 -> 客户端: SYN+ACK, seq=y, ack=x+1
+客户端 -> 服务器: ACK, ack=y+1
+note 客户端, 服务器: ESTABLISHED
+```
+
+## C 状态迁移 {span=2}
+```flow LR
+(CLOSED) -> LISTEN: 被动打开
+LISTEN -> SYN_RCVD: 收 SYN / 发 SYN+ACK
+SYN_RCVD -> *ESTABLISHED: 收 ACK
+```
+````
+
+剩下的都由 CLI 完成：选模板、排面板、套主题，用 [dagre](https://github.com/dagrejs/dagre) 算流程图坐标，按标签宽度拉开时序图间距。完整稿件 [examples/tcp.md](examples/tcp.md) 会生成这一页：
+
+<p align="center">
+  <img src="docs/images/tcp.png" alt="TCP 示例页面" width="100%">
+</p>
+
+## 特性
+
+- **版面由代码计算:** 面板位置和图形坐标都是算出来的，不靠模型猜。文字不会被截断，网格里也不会留空洞。
+- **出错能自己改:** 稿件写错时，CLI 会给出行号、组件名和一段正确示例。Agent 照着改一次就行。
+- **三套主题:** blueprint 是图纸风，shadcn 是卡片风，paper 适合读长文。默认由 CLI 按内容自动选：长文用 paper，有图表用 blueprint。三套都带亮色和暗色，页面上可以用下拉框随时切换，也可以添加你自己的主题，或者从[主题库](https://answer-me-with-html.com/zh/themes/)里取一个。
+- **单文件、零依赖:** 产物是一个 `.html`，不引用任何 CDN 或外部字体。断网也能打开，发给别人也能看。
+- **多语言:** 简体中文、繁体中文、英文和日文都有对应的按钮和字体。其他语言也能用，按钮是英文。详见[语言](docs/reference.zh-CN.md#语言)。
+- **写作检查:** 按 ASD-STE100 的思路检查稿件里的文字。句子太长、用词太绕、被动语态都会提醒。默认只提醒，不拦着。
+- **真实代码，不靠手抄:** 代码块可以直接引用你文件里的几行（`src=` `lines=`），页面上的代码就是真实代码。当前目录以外的文件和存放密钥的文件会被拒绝。
+- **在页面上回复:** 可以对任意面板写评论，也可以在 Agent 提出的决定（`ask`）里选选项。点"回复"按钮，你的选择和评论会合成一段文字，贴回给 Agent 即可。
+- **能找回原稿:** 每页都内嵌了生成它的 Markdown。点"复制源稿"就能拿回来改。
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/images/ste100.png" alt="blueprint 图纸风"></td>
+    <td width="50%"><img src="docs/images/architecture-dark.png" alt="单栏模板，shadcn 暗色"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>blueprint 图纸风（<a href="examples/ste100.md">examples/ste100.md</a>）</sub></td>
+    <td align="center"><sub>单栏长文模板 + 暗色（<a href="examples/architecture.md">examples/architecture.md</a>）</sub></td>
+  </tr>
+</table>
+
+## 组件
+
+Agent 会按信息的形状挑组件：
+
+| 组件 | 适合什么 |
+| :--- | :--- |
+| `flow` | 架构、调用链、决策分支。自动布局，支持分组、判断框、数据库 |
+| `er` | 数据模型：实体带字段（PK / FK / UK）和鸦爪式关系连线 |
+| `sequence` | 几方之间按时间顺序来回发消息 |
+| `tree` | 目录、模块、分类体系 |
+| `timeline` | 历史、版本、阶段 |
+| `limits` | 当前值和上限的对比 |
+| `annot` | 逐词点评一句话 |
+| `kv` | 元信息、图纸标题栏 |
+| `callout` | 结论、提示、警告 |
+| `ask` | 需要你在页面上做的决定，Agent 的建议项默认选中 |
+| 代码块 | 从文件引用的真实代码（`src=` `lines=`），或手写的示意代码 |
+| 表格 | 多维对比。单元格写 `ok` / `no` / `warn` 会变成 ✓ ✗ ! |
+
+稿件格式（frontmatter、`span`、`rows`、原始 `html`/`svg` 块）和不经过 Agent 直接用命令行：见[参考](docs/reference.zh-CN.md)。每个组件的完整写法：`am help <组件名>`。
+
+## STE 受控写作检查
+
+[ASD-STE100](https://www.asd-ste100.org/) 是一套受控英语，最早用来写飞机维修手册。它的规定很具体：句子不能太长，一个词只表达一个意思，操作步骤要用祈使句。Karpathy 提到，让 LLM 按这套规则写，读起来会清楚很多。
+
+每次渲染都会检查其中容易用机器检查的部分：句长、常用词、被动语态，以及中文的错别字和含糊词。默认只提醒。用 `/answer-me-with-html:config style strict` 让不达标的稿件不生成，或者在单篇稿件里写 `style:`。完整规则见[参考](docs/reference.zh-CN.md#写作检查)。
+
+## 开发
+
+```bash
+git clone https://github.com/QingYunA/answer-me-with-html.git && cd answer-me-with-html
+npm install
+npm test          # 跑测试
+AM_E2E=1 npm test # 连同视频端到端测试一起跑（需要系统 TTS、Chrome、ffmpeg）
+npm run smoke:install # 用 npx skills 真实安装一次，并校验插件清单（需要联网）
+npm run build     # 改了 src/ 之后，重新打包 skills/answer-me-with-html/scripts/am.mjs
+npm run snapshot  # 与 origin/main 对比生成的 HTML（重构不能改变它）
+```
+
+维护约定（生成的打包文件、页面格式、快照比对、审 PR、发版）见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+运行时依赖只有两个：[marked](https://github.com/markedjs/marked) 负责解析 Markdown，[@dagrejs/dagre](https://github.com/dagrejs/dagre) 负责流程图布局。打包时它们会被一起打进 `am.mjs`。
+
+## 社区
+
+有问题、想分享做出来的页面、有功能建议，或者只是想打个招呼，都欢迎来。
+
+- [Discord](https://discord.gg/sYQuRRZNzQ)
+- QQ 群：`1127099407`
+- [LINUX DO](https://linux.do) 中文开发者论坛
+
+发现 bug 请提 [GitHub issue](https://github.com/QingYunA/answer-me-with-html/issues)。
+
+## Star 历史
+
+<a href="https://star-history.com/#QingYunA/answer-me-with-html&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=QingYunA/answer-me-with-html&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=QingYunA/answer-me-with-html&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=QingYunA/answer-me-with-html&type=Date" />
+  </picture>
+</a>
+
+## License
+
+[MIT](LICENSE)。主题可以内嵌的 Bangers 字体使用 [SIL Open Font License 1.1](skills/answer-me-with-html/licenses/OFL-Bangers.txt)。

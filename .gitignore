@@ -1,1 +1,23 @@
-bm9kZV9tb2R1bGVzLwouRFNfU3RvcmUKKi5sb2cKY292ZXJhZ2UvCi5wbGF5d3JpZ2h0LW1jcC8KYmVuY2gvcmVzdWx0cy8qKi8qLmh0bWwKYmVuY2gvcmVzdWx0cy8qKi8qLnBuZwpiZW5jaC9lbi8KCiMgVGhlIHRva2VuIGNvcnB1cyBpcyBhIHJlbGVhc2UgZG93bmxvYWQ7IG9ubHkgaXRzIGNvdW50cyAodG9rZW5zLmpzb24pIGFyZSBpbiBnaXQuCmJlbmNoL2NvcnB1cy8qLmh0bWwKYmVuY2gvY29ycHVzLyoubWQKCiMg56S+5Lqk5aqS5L2T5a6j5Lyg5Zu+77yI5pys5Zyw5Yi25L2c77yM5LiN5YWl5bqT77yJCmRvY3Mvc29jaWFsLwoKIyDmvJTnpLrop4bpopHmiJDlk4HkvZPnp6/lpKfvvIzkuI3lhaXlupPvvIjmj5Lku7blronoo4XkvJrmi7fotJ3mlbTkuKrku5PlupPvvInjgIJSRUFETUUg6YeM55SoIEdpdEh1YiDpmYTku7bpk77mjqXjgIIKZG9jcy9kZW1vLyoubXA0CmRvY3MvZGVtby8qLmdpZgoKIyBXZWJzaXRlIGJ1aWxkIG91dHB1dCAobnBtIHJ1biBzaXRlKTsgR2l0SHViIFBhZ2VzIGJ1aWxkcyBpdCBpbiBDSS4Kc2l0ZS9kaXN0LwpfX3B5Y2FjaGVfXy8K
+node_modules/
+.DS_Store
+*.log
+coverage/
+.playwright-mcp/
+bench/results/**/*.html
+bench/results/**/*.png
+bench/en/
+
+# The token corpus is a release download; only its counts (tokens.json) are in git.
+bench/corpus/*.html
+bench/corpus/*.md
+
+# 社交媒体宣传图（本地制作，不入库）
+docs/social/
+
+# 演示视频成品体积大，不入库（插件安装会拷贝整个仓库）。README 里用 GitHub 附件链接。
+docs/demo/*.mp4
+docs/demo/*.gif
+
+# Website build output (npm run site); GitHub Pages builds it in CI.
+site/dist/
+__pycache__/

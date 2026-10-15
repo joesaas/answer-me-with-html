@@ -1,1 +1,78 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJEb2NSZWFkZXIgY3JlZGVudGlhbCBhZGFwdGVyIGZvciB0aGUgTXVzZSBydW50aW1lLgoKSW1wbGVtZW50cyB0aGUgYW5zd2VyLW1lLXdpdGgtaHRtbCBEb2NSZWFkZXIgYWRhcHRlciBwcm90b2NvbCAoc2VlCmFkYXB0ZXJzL1JFQURNRS5tZCk6IHJlYWRzIHsiYmFzZSIsICJob3N0In0gSlNPTiBvbiBzdGRpbiBhbmQgcHJpbnRzCnsiaGVhZGVycyI6IHsuLi59fSBvbiBzdGRvdXQuCgpJbiBNdXNlIHRoZSByZWFsIEFQSSBrZXkgbGl2ZXMgaW4gdGhlIHVzZXIncyBjb25uZWN0b3IgdmF1bHQgKGNvbm5lY3RvcgpjdXN0b20uYWdlbnQxMDEpLiBUaGlzIGFkYXB0ZXIgYXNrcyB0aGUgbG9jYWwgYXV0aGQgZm9yIHRoZSBjb25uZWN0b3Incwpoc3Vycjogc3Vycm9nYXRlIHZpYSB0aGUgcGxhdGZvcm0ncyBkeW5hbWljX2NyZWRlbnRpYWxzIGhlbHBlciBhbmQgcmV0dXJucwppdCB1bmRlciB0aGUgaGVhZGVyIHRoZSBjb25uZWN0b3IgZGVjbGFyZXMgKFgtQVBJLUtleSkuIFRoZSBzdXJyb2dhdGUgaXMKaG9zdC1sb2NrZWQgYnkgdGhlIHBsYXRmb3JtOyBTZW50aW5lbCBzd2FwcyBpbiB0aGUgcmVhbCBrZXkgYXQgZWdyZXNzLCBzbwpubyByZWFsIGNyZWRlbnRpYWwgZXZlciB0b3VjaGVzIHRoaXMgcHJvY2VzcydzIG91dHB1dCBhcyBhIHVzYWJsZSBzZWNyZXQKb3V0c2lkZSBNdXNlJ3MgZWdyZXNzLgoKT3V0c2lkZSBhIE11c2UgY29udGFpbmVyIChubyBoZWxwZXIgbGlicmFyeSwgbm8gYXV0aGQgc29ja2V0KSBpdCBwcmludHMKeyJza2lwIjogLi4ufSBzbyB0aGUgdXBsb2FkIGlzIHNraXBwZWQgY2xlYW5seSBpbnN0ZWFkIG9mIGZhaWxpbmcuCiIiIgppbXBvcnQganNvbgppbXBvcnQgc3lzCgpDQU5ESURBVEVfTElCX0RJUlMgPSBbCiAgICAiL29wdC9tdXNlL3NraWxscy9jdXN0b20tY29ubmVjdG9yLXNldHVwL2JpbiIsCiAgICAiL29wdC9oYXRjaC9za2lsbHMvc2tpbGwtY3JlYXRvci9iaW4iLApdCkNPTk5FQ1RPUiA9ICJjdXN0b20uYWdlbnQxMDEiCgoKZGVmIG1haW4oKSAtPiBpbnQ6CiAgICB0cnk6CiAgICAgICAgY3R4ID0ganNvbi5sb2FkKHN5cy5zdGRpbikKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgY3R4ID0ge30KICAgIGhvc3QgPSBzdHIoY3R4LmdldCgiaG9zdCIpIG9yICIiKQoKICAgIGxpYiA9IE5vbmUKICAgIGZvciBkIGluIENBTkRJREFURV9MSUJfRElSUzoKICAgICAgICBpZiBkIG5vdCBpbiBzeXMucGF0aDoKICAgICAgICAgICAgc3lzLnBhdGguaW5zZXJ0KDAsIGQpCiAgICB0cnk6CiAgICAgICAgaW1wb3J0IGR5bmFtaWNfY3JlZGVudGlhbHMgYXMgbGliICAjIHR5cGU6IGlnbm9yZQogICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICBwcmludChqc29uLmR1bXBzKHsic2tpcCI6ICJNdXNlIGR5bmFtaWNfY3JlZGVudGlhbHMgaGVscGVyIG5vdCBmb3VuZDsgdGhpcyBhZGFwdGVyIG9ubHkgd29ya3MgaW5zaWRlIGEgTXVzZSBjb250YWluZXIifSkpCiAgICAgICAgcmV0dXJuIDAKCiAgICBpbXBvcnQgb3MKICAgIGlmIG5vdCBvcy5wYXRoLmV4aXN0cyhnZXRhdHRyKGxpYiwgIkFVVEhEX1NPQ0tFVCIsICIvcnVuL2hhdGNoL2F1dGgvYXV0aGQuc29jayIpKToKICAgICAgICBwcmludChqc29uLmR1bXBzKHsic2tpcCI6ICJNdXNlIGF1dGhkIHNvY2tldCBub3QgcHJlc2VudDsgdGhlIGNvbm5lY3RvciBjcmVkZW50aWFsIGlzIHVuYXZhaWxhYmxlIGluIHRoaXMgZW52aXJvbm1lbnQifSkpCiAgICAgICAgcmV0dXJuIDAKCiAgICB0cnk6CiAgICAgICAgZW50cnkgPSBsaWIuZHluYW1pY19jcmVkZW50aWFsX2VudHJ5KENPTk5FQ1RPUikKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZTogICMgYXV0aGQgcmVhY2hhYmxlIGJ1dCB0aGUgY29ubmVjdG9yIGlzIG5vdCBzZXQgdXAKICAgICAgICBwcmludChmImRvY3JlYWRlciBtdXNlIGFkYXB0ZXI6IHtlfSIsIGZpbGU9c3lzLnN0ZGVycikKICAgICAgICByZXR1cm4gMQoKICAgIHN1cnJvZ2F0ZSA9IHN0cihlbnRyeS5nZXQoInN1cnJvZ2F0ZSIsICIiKSkuc3RyaXAoKQogICAgcGxhY2VtZW50ID0gZW50cnkuZ2V0KCJwbGFjZW1lbnQiKQogICAgaWYgaXNpbnN0YW5jZShwbGFjZW1lbnQsIGRpY3QpIGFuZCBpc2luc3RhbmNlKHBsYWNlbWVudC5nZXQoImN1c3RvbV9oZWFkZXIiKSwgc3RyKToKICAgICAgICBoZWFkZXJzID0ge3BsYWNlbWVudFsiY3VzdG9tX2hlYWRlciJdOiBzdXJyb2dhdGV9CiAgICBlbGlmIHBsYWNlbWVudCA9PSAiYmVhcmVyX2hlYWRlciI6CiAgICAgICAgaGVhZGVycyA9IHsiQXV0aG9yaXphdGlvbiI6IGYiQmVhcmVyIHtzdXJyb2dhdGV9In0KICAgIGVsc2U6CiAgICAgICAgcHJpbnQoZiJkb2NyZWFkZXIgbXVzZSBhZGFwdGVyOiB1bnN1cHBvcnRlZCBjcmVkZW50aWFsIHBsYWNlbWVudCB7cGxhY2VtZW50IXJ9IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHJldHVybiAxCiAgICBpZiBob3N0OgogICAgICAgICMgVGhlIHN1cnJvZ2F0ZSBpcyBsb2NrZWQgdG8gdGhlIGNvbm5lY3RvcidzIGFsbG93ZWQgaG9zdHMgYnkgdGhlCiAgICAgICAgIyBwbGF0Zm9ybTsgcmVmdXNlIGVhcmx5IGlmIHRoZSB0YXJnZXQgaXMgY2xlYXJseSBhIGRpZmZlcmVudCBob3N0LgogICAgICAgIHRyeToKICAgICAgICAgICAgbGliLmVuc3VyZV9hbGxvd2VkX3VybChmImh0dHBzOi8ve2hvc3R9LyIsIFtob3N0XSkKICAgICAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgICAgICBwYXNzCiAgICBwcmludChqc29uLmR1bXBzKHsiaGVhZGVycyI6IGhlYWRlcnN9KSkKICAgIHJldHVybiAwCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIHN5cy5leGl0KG1haW4oKSkK
+#!/usr/bin/env python3
+"""DocReader credential adapter for the Muse runtime.
+
+Implements the answer-me-with-html DocReader adapter protocol (see
+adapters/README.md): reads {"base", "host"} JSON on stdin and prints
+{"headers": {...}} on stdout.
+
+In Muse the real API key lives in the user's connector vault (connector
+custom.agent101). This adapter asks the local authd for the connector's
+hsurr: surrogate via the platform's dynamic_credentials helper and returns
+it under the header the connector declares (X-API-Key). The surrogate is
+host-locked by the platform; Sentinel swaps in the real key at egress, so
+no real credential ever touches this process's output as a usable secret
+outside Muse's egress.
+
+Outside a Muse container (no helper library, no authd socket) it prints
+{"skip": ...} so the upload is skipped cleanly instead of failing.
+"""
+import json
+import sys
+
+CANDIDATE_LIB_DIRS = [
+    "/opt/muse/skills/custom-connector-setup/bin",
+    "/opt/hatch/skills/skill-creator/bin",
+]
+CONNECTOR = "custom.agent101"
+
+
+def main() -> int:
+    try:
+        ctx = json.load(sys.stdin)
+    except Exception:
+        ctx = {}
+    host = str(ctx.get("host") or "")
+
+    lib = None
+    for d in CANDIDATE_LIB_DIRS:
+        if d not in sys.path:
+            sys.path.insert(0, d)
+    try:
+        import dynamic_credentials as lib  # type: ignore
+    except Exception:
+        print(json.dumps({"skip": "Muse dynamic_credentials helper not found; this adapter only works inside a Muse container"}))
+        return 0
+
+    import os
+    if not os.path.exists(getattr(lib, "AUTHD_SOCKET", "/run/hatch/auth/authd.sock")):
+        print(json.dumps({"skip": "Muse authd socket not present; the connector credential is unavailable in this environment"}))
+        return 0
+
+    try:
+        entry = lib.dynamic_credential_entry(CONNECTOR)
+    except Exception as e:  # authd reachable but the connector is not set up
+        print(f"docreader muse adapter: {e}", file=sys.stderr)
+        return 1
+
+    surrogate = str(entry.get("surrogate", "")).strip()
+    placement = entry.get("placement")
+    if isinstance(placement, dict) and isinstance(placement.get("custom_header"), str):
+        headers = {placement["custom_header"]: surrogate}
+    elif placement == "bearer_header":
+        headers = {"Authorization": f"Bearer {surrogate}"}
+    else:
+        print(f"docreader muse adapter: unsupported credential placement {placement!r}", file=sys.stderr)
+        return 1
+    if host:
+        # The surrogate is locked to the connector's allowed hosts by the
+        # platform; refuse early if the target is clearly a different host.
+        try:
+            lib.ensure_allowed_url(f"https://{host}/", [host])
+        except Exception:
+            pass
+    print(json.dumps({"headers": headers}))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

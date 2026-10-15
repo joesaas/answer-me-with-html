@@ -1,1 +1,74 @@
-IyBEb2NSZWFkZXIgY3JlZGVudGlhbCBhZGFwdGVycwoKVGhpcyBmb3JrIHVwbG9hZHMgZXZlcnkgcmVuZGVyZWQgcGFnZSB0byBhIERvY1JlYWRlciBzZXJ2ZXIuIFRoZSBza2lsbCBjb3JlCmtub3dzIHRoZSBEb2NSZWFkZXIgQVBJIGJ1dCAqKm5ldmVyKioga25vd3Mgd2hlcmUgdGhlIGNyZWRlbnRpYWwgbGl2ZXMg4oCUIHRoYXQgaXMKZWFjaCBydW50aW1lJ3Mgam9iLCB0aHJvdWdoIGFuICphZGFwdGVyKi4gVGhlIHNhbWUgc2tpbGwgdGhlcmVmb3JlIGluc3RhbGxzCnVuY2hhbmdlZCBpbnRvIE11c2UsIEdlbWluaSwgR3JvayBCb3QsIENsYXVkZSBDb2RlLCBvciBhbnkgb3RoZXIgYWdlbnQKY29udGFpbmVyOyBvbmx5IHRoZSBhZGFwdGVyIGRpZmZlcnMgcGVyIGVudmlyb25tZW50LgoKIyMgVGhlIHR3byB3YXlzIHRvIHByb3ZpZGUgYSBjcmVkZW50aWFsCgoxLiAqKkVudmlyb25tZW50IGtleSAoemVybyBzZXR1cCkuKiogU2V0IGBET0NfUkVBREVSX0FQSV9LRVlgIGFuZCB0aGUgY29yZSBzZW5kcwogICBpdCBhcyB0aGUgYFgtQVBJLUtleWAgaGVhZGVyLiBUaGlzIGlzIGVub3VnaCBmb3IgbW9zdCBjb250YWluZXJzLgoyLiAqKkV4dGVybmFsIGFkYXB0ZXIuKiogQW4gZXhlY3V0YWJsZSB0aGUgY29yZSBjYWxscyB0byBvYnRhaW4gdGhlIGF1dGgKICAgaGVhZGVycy4gVXNlIGl0IHdoZW4gdGhlIGNyZWRlbnRpYWwgbGl2ZXMgaW4gYSBwbGF0Zm9ybSB2YXVsdCBhbmQgbXVzdCBub3QKICAgYmUgY29waWVkIGludG8gYW4gZW52IHZhciAoTXVzZSBpcyB0aGUgZXhhbXBsZSBiZWxvdykuCgpXaXRoIG5laXRoZXIgY29uZmlndXJlZCwgdGhlIHVwbG9hZCBpcyBza2lwcGVkIGFuZCB0aGUgcmVuZGVyIHN0aWxsIHN1Y2NlZWRzLgoKIyMgQWRhcHRlciBkaXNjb3ZlcnkKClRoZSBjb3JlIGxvb2tzIGZvciBhbiBhZGFwdGVyIGluIHRoaXMgb3JkZXI6CgoxLiBgQU1fRE9DUkVBREVSX0FEQVBURVJgIOKAlCBwYXRoIHRvIGFueSBleGVjdXRhYmxlLgoyLiBgJEFNX0hPTUUvYWRhcHRlcnMvZG9jcmVhZGVyYCDigJQgdGhlIGNvbnZlbnRpb25hbCBpbnN0YWxsIGxvY2F0aW9uCiAgIChgQU1fSE9NRWAgZGVmYXVsdHMgdG8gYH4vLmFuc3dlci1tZS13aXRoLWh0bWxgKS4KCiMjIEFkYXB0ZXIgcHJvdG9jb2wKClRoZSBhZGFwdGVyIGlzIGFuIGV4ZWN1dGFibGUgaW4gYW55IGxhbmd1YWdlIChhIHNoZWJhbmcgaXMgZW5vdWdoKS4gVGhlIGNvcmU6CgotIHJ1bnMgaXQgd2l0aCAqKm5vIGFyZ3VtZW50cyoqLCB3aXRoIGEgMTUtc2Vjb25kIHRpbWVvdXQ7Ci0gd3JpdGVzIG9uZSBKU09OIG9iamVjdCB0byBpdHMgc3RkaW46IGB7ImJhc2UiOiAiaHR0cHM6Ly9hZ2VudDEwMS51ayIsICJob3N0IjogImFnZW50MTAxLnVrIn1gOwotIGV4cGVjdHMgZXhhY3RseSBvbmUgSlNPTiBvYmplY3Qgb24gc3Rkb3V0LCBpbiBvbmUgb2YgdHdvIHNoYXBlczoKCmBgYGpzb24KeyJoZWFkZXJzIjogeyJYLUFQSS1LZXkiOiAi4oCmIn19ICAgICDihpAgYXV0aGVudGljYXRlIHRoZSB1cGxvYWQgd2l0aCB0aGVzZSBoZWFkZXJzCnsic2tpcCI6ICJyZWFzb24gZm9yIHRoaXMgZW52aXJvbm1lbnQifSAgIOKGkCBza2lwIHRoZSB1cGxvYWQsIHJlbmRlciBzdGlsbCBzdWNjZWVkcwpgYGAKCkEgbm9uLXplcm8gZXhpdCwgaW52YWxpZCBKU09OLCBvciBhbiBlbXB0eSBgaGVhZGVyc2Agb2JqZWN0IGlzIGEgaGFyZCBhZGFwdGVyCmZhaWx1cmU6IHRoZSByZW5kZXIgc3RpbGwgc3VjY2VlZHMgYW5kIHRoZSBmYWlsdXJlIGlzIHByaW50ZWQgb24gdGhlCmDinJcgRG9jUmVhZGVyOmAgbGluZS4gQW4gYWRhcHRlciBtdXN0IG5ldmVyIHByaW50IGFueXRoaW5nIGVsc2UgdG8gc3Rkb3V0Cihsb2cgdG8gc3RkZXJyKSwgYW5kIG11c3Qgbm90IHJlYWQgdGhlIGRvY3VtZW50IOKAlCBpdCBvbmx5IGFuc3dlcnMKIndoaWNoIGhlYWRlcnMgYXV0aGVudGljYXRlIG1lIGhlcmU/Ii4gVGhlIGNvcmUgcGVyZm9ybXMgdGhlIEhUVFAgdXBsb2FkCml0c2VsZiwgc28gZXZlcnkgcnVudGltZSBnZXRzIGlkZW50aWNhbCB1cGxvYWQgYmVoYXZpb3IuCgojIyBQZXItcnVudGltZSBzZXR1cAoKIyMjIE11c2UKCmBhZGFwdGVycy9tdXNlLnB5YCAoc2hpcHBlZCBoZXJlKSByZXR1cm5zIHRoZSBgY3VzdG9tLmFnZW50MTAxYCBjb25uZWN0b3IKc3Vycm9nYXRlIGZyb20gTXVzZSdzIGF1dGhkOyBTZW50aW5lbCBleGNoYW5nZXMgaXQgZm9yIHRoZSByZWFsIGtleSBhdApuZXR3b3JrIGVncmVzcy4gSW5zdGFsbCBpdCBhdCB0aGUgY29udmVudGlvbmFsIGxvY2F0aW9uOgoKYGBgc2gKbWtkaXIgLXAgfi8uYW5zd2VyLW1lLXdpdGgtaHRtbC9hZGFwdGVycwpjcCBhZGFwdGVycy9tdXNlLnB5IH4vLmFuc3dlci1tZS13aXRoLWh0bWwvYWRhcHRlcnMvZG9jcmVhZGVyCmNobW9kICt4IH4vLmFuc3dlci1tZS13aXRoLWh0bWwvYWRhcHRlcnMvZG9jcmVhZGVyCmBgYAoKUmVxdWlyZXMgdGhlIGBjdXN0b20uYWdlbnQxMDFgIGNvbm5lY3RvciB0byBiZSBjb25uZWN0ZWQgaW4gdGhhdCBNdXNlCmVudmlyb25tZW50LiBPdXRzaWRlIE11c2UgaXQgcHJpbnRzIGB7InNraXAiOiDigKZ9YCBhbmQgdXBsb2FkcyBhcmUgc2tpcHBlZC4KCiMjIyBBbnkgb3RoZXIgcnVudGltZSAoR2VtaW5pLCBHcm9rIEJvdCwgcGxhaW4gY29udGFpbmVycykKCkVpdGhlciBleHBvcnQgYERPQ19SRUFERVJfQVBJX0tFWWAsIG9yIHBvaW50IGBBTV9ET0NSRUFERVJfQURBUFRFUmAgYXQgYSBzbWFsbApzY3JpcHQgdGhhdCBmZXRjaGVzIHRoZSBrZXkgZnJvbSB5b3VyIHNlY3JldCBzdG9yZS4gQSBtaW5pbWFsIGV4YW1wbGU6CgpgYGBzaAojIS9iaW4vc2gKIyB+Ly5hbnN3ZXItbWUtd2l0aC1odG1sL2FkYXB0ZXJzL2RvY3JlYWRlcgprZXk9JChjYXQgL3J1bi9zZWNyZXRzL2RvY19yZWFkZXJfYXBpX2tleSkKcHJpbnRmICd7ImhlYWRlcnMiOiB7IlgtQVBJLUtleSI6ICIlcyJ9fScgIiRrZXkiCmBgYAo=
+# DocReader credential adapters
+
+This fork uploads every rendered page to a DocReader server. The skill core
+knows the DocReader API but **never** knows where the credential lives — that is
+each runtime's job, through an *adapter*. The same skill therefore installs
+unchanged into Muse, Gemini, Grok Bot, Claude Code, or any other agent
+container; only the adapter differs per environment.
+
+## The two ways to provide a credential
+
+1. **Environment key (zero setup).** Set `DOC_READER_API_KEY` and the core sends
+   it as the `X-API-Key` header. This is enough for most containers.
+2. **External adapter.** An executable the core calls to obtain the auth
+   headers. Use it when the credential lives in a platform vault and must not
+   be copied into an env var (Muse is the example below).
+
+With neither configured, the upload is skipped and the render still succeeds.
+
+## Adapter discovery
+
+The core looks for an adapter in this order:
+
+1. `AM_DOCREADER_ADAPTER` — path to any executable.
+2. `$AM_HOME/adapters/docreader` — the conventional install location
+   (`AM_HOME` defaults to `~/.answer-me-with-html`).
+
+## Adapter protocol
+
+The adapter is an executable in any language (a shebang is enough). The core:
+
+- runs it with **no arguments**, with a 15-second timeout;
+- writes one JSON object to its stdin: `{"base": "https://agent101.uk", "host": "agent101.uk"}`;
+- expects exactly one JSON object on stdout, in one of two shapes:
+
+```json
+{"headers": {"X-API-Key": "…"}}     ← authenticate the upload with these headers
+{"skip": "reason for this environment"}   ← skip the upload, render still succeeds
+```
+
+A non-zero exit, invalid JSON, or an empty `headers` object is a hard adapter
+failure: the render still succeeds and the failure is printed on the
+`✗ DocReader:` line. An adapter must never print anything else to stdout
+(log to stderr), and must not read the document — it only answers
+"which headers authenticate me here?". The core performs the HTTP upload
+itself, so every runtime gets identical upload behavior.
+
+## Per-runtime setup
+
+### Muse
+
+`adapters/muse.py` (shipped here) returns the `custom.agent101` connector
+surrogate from Muse's authd; Sentinel exchanges it for the real key at
+network egress. Install it at the conventional location:
+
+```sh
+mkdir -p ~/.answer-me-with-html/adapters
+cp adapters/muse.py ~/.answer-me-with-html/adapters/docreader
+chmod +x ~/.answer-me-with-html/adapters/docreader
+```
+
+Requires the `custom.agent101` connector to be connected in that Muse
+environment. Outside Muse it prints `{"skip": …}` and uploads are skipped.
+
+### Any other runtime (Gemini, Grok Bot, plain containers)
+
+Either export `DOC_READER_API_KEY`, or point `AM_DOCREADER_ADAPTER` at a small
+script that fetches the key from your secret store. A minimal example:
+
+```sh
+#!/bin/sh
+# ~/.answer-me-with-html/adapters/docreader
+key=$(cat /run/secrets/doc_reader_api_key)
+printf '{"headers": {"X-API-Key": "%s"}}' "$key"
+```
