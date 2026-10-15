@@ -1,1 +1,147 @@
-Ly8gRG9jUmVhZGVyIGF1dG8tdXBsb2FkIOKAlCBhIGZlYXR1cmUgb2YgdGhpcyBmb3JrIChqb2VzYWFzL2Fuc3dlci1tZS13aXRoLWh0bWwpLgovLwovLyBBZnRlciBgYW0gcmVuZGVyYCB3cml0ZXMgYSBwYWdlLCB0aGUgcGFnZSBpcyB1cGxvYWRlZCB0byB0aGUgdXNlcidzIERvY1JlYWRlcgovLyBzZXJ2ZXIgKEFnZW50IDEwMSkgdGhyb3VnaCB0aGUgQUkgQVBJIHRoYXQgam9lc2Fhcy9kb2MtcmVhZGVyIGV4cG9zZXMKLy8gKFBPU1QgL2FwaS9haS9kb2NzIOKAlCBzZWUgdGhhdCByZXBvJ3MgZG9jcy9BSV9BUEkubWQpLgovLwovLyBUaGUgY29yZSBzdGF5cyBydW50aW1lLWFnbm9zdGljOiBpdCBrbm93cyB0aGUgRG9jUmVhZGVyIEFQSSwgYnV0IGl0IGRvZXMgTk9UCi8vIGtub3cgd2hlcmUgY3JlZGVudGlhbHMgbGl2ZS4gQ3JlZGVudGlhbHMgY29tZSBmcm9tIGEgcGx1Z2dhYmxlIGFkYXB0ZXIsIHNvIHRoZQovLyBzYW1lIHNraWxsIHdvcmtzIGluIE11c2UsIEdlbWluaSwgR3JvayBCb3QsIG9yIGFueSBvdGhlciBhZ2VudCBjb250YWluZXI6Ci8vCi8vICAgMS4gQnVpbHQtaW4gZW52IGFkYXB0ZXI6IERPQ19SRUFERVJfQVBJX0tFWSBpcyBzZW50IGFzIHRoZSBYLUFQSS1LZXkgaGVhZGVyLgovLyAgIDIuIEV4dGVybmFsIGFkYXB0ZXI6IGFuIGV4ZWN1dGFibGUgdGhhdCBwcmludHMgdGhlIGF1dGggaGVhZGVycyBhcyBKU09OLgovLyAgICAgIEZvdW5kIHZpYSBBTV9ET0NSRUFERVJfQURBUFRFUiwgb3IgYXQgJEFNX0hPTUUvYWRhcHRlcnMvZG9jcmVhZGVyLgovLyAgICAgIFByb3RvY29sIChzZWUgc2tpbGxzL2Fuc3dlci1tZS13aXRoLWh0bWwvYWRhcHRlcnMvUkVBRE1FLm1kKToKLy8gICAgICAgIHN0ZGluOiAgeyJiYXNlIjogImh0dHBzOi8vYWdlbnQxMDEudWsiLCAiaG9zdCI6ICJhZ2VudDEwMS51ayJ9Ci8vICAgICAgICBzdGRvdXQ6IHsiaGVhZGVycyI6IHsiWC1BUEktS2V5IjogIi4uLiJ9fSAg4oCUIG9yIHsic2tpcCI6ICJyZWFzb24ifQovLyAgICAgIEFuIGFkYXB0ZXIgZm9yIE11c2Ugc2hpcHMgaW4gYWRhcHRlcnMvbXVzZS5weSAoaXQgcmV0dXJucyB0aGUKLy8gICAgICBjdXN0b20uYWdlbnQxMDEgY29ubmVjdG9yIHN1cnJvZ2F0ZTsgU2VudGluZWwgc3dhcHMgaW4gdGhlIHJlYWwga2V5KS4KLy8gV2l0aCBuZWl0aGVyLCB0aGUgdXBsb2FkIGlzIHNraXBwZWQgYW5kIHRoZSByZW5kZXIgc3RpbGwgc3VjY2VlZHMuCi8vCi8vIFN3aXRjaGVzOiBgYW0gY29uZmlnIHNldCBkb2NyZWFkZXJfdXBsb2FkIG9mZmAsIEFNX0RPQ1JFQURFUl9VUExPQUQ9MCwgb3IKLy8gLS1uby11cGxvYWQgZm9yIG9uZSBydW47IC0tdXBsb2FkIGZvcmNlcyBvbmUgcnVuIGV2ZW4gd2hlbiB0aGUgY29uZmlnIGlzIG9mZi4KLy8gVGFyZ2V0OiBET0NfUkVBREVSX0JBU0UgKGRlZmF1bHQgaHR0cHM6Ly9hZ2VudDEwMS51aykuIENhdGVnb3J5OiAtLWNhdGVnb3J5LAovLyB0aGUgZHJhZnQncyBgY2F0ZWdvcnk6YCBmcm9udG1hdHRlciwgRE9DX1JFQURFUl9DQVRFR09SWSwgZWxzZSAib3RoZXIiLgovLyBBIHN0YWJsZSBleHRlcm5hbCBpZCAoZnJvbnRtYXR0ZXIgYGV4dGVybmFsX2lkOmAgb3IgLS1leHRlcm5hbC1pZCkgbWFrZXMgYQovLyByZS1yZW5kZXIgcmVwbGFjZSB0aGUgc2FtZSBkb2N1bWVudCBpbnN0ZWFkIG9mIGNyZWF0aW5nIGEgbmV3IG9uZS4KCmltcG9ydCB7IGV4aXN0c1N5bmMgfSBmcm9tICdub2RlOmZzJzsKaW1wb3J0IHsgc3Bhd25TeW5jIH0gZnJvbSAnbm9kZTpjaGlsZF9wcm9jZXNzJzsKaW1wb3J0IHsgam9pbiB9IGZyb20gJ25vZGU6cGF0aCc7CgpleHBvcnQgY29uc3QgRE9DUkVBREVSX0NBVEVHT1JJRVMgPSBPYmplY3QuZnJlZXplKFsKICAnYWdlbnQnLCAnZGVmaScsICdibG9ja2NoYWluJywgJ3Byb3RvY29sJywgJ3NlY3VyaXR5JywgJ25ldHdvcmsnLCAnZW5naW5lZXJpbmcnLCAnb3RoZXInLApdKTsKCi8vIENsb3VkZmxhcmUgaW4gZnJvbnQgb2YgdGhlIERvY1JlYWRlciBzZXJ2ZXIgNDAzcyBub24tYnJvd3NlciB1c2VyIGFnZW50cwovLyAodmVyaWZpZWQgMjAyNi0xMC0xMDogcHl0aG9uLXVybGxpYidzIGRlZmF1bHQgVUEgd2FzIHJlamVjdGVkKSwgc28gc2VuZCBhIGJyb3dzZXIgVUEuCmNvbnN0IEJST1dTRVJfVUEgPSAnTW96aWxsYS81LjAgKE1hY2ludG9zaDsgSW50ZWwgTWFjIE9TIFggMTBfMTVfNykgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyNi4wIFNhZmFyaS81MzcuMzYnOwoKY29uc3QgSEVBREVSX05BTUUgPSAvXlshIyQlJicqK1wtLl5fYHx+MC05QS1aYS16XSskLzsKCmV4cG9ydCBjb25zdCBkb2NSZWFkZXJCYXNlID0gKGVudikgPT4gU3RyaW5nKGVudi5ET0NfUkVBREVSX0JBU0UgfHwgJ2h0dHBzOi8vYWdlbnQxMDEudWsnKS5yZXBsYWNlKC9cLyskLywgJycpOwoKZXhwb3J0IGNvbnN0IG5vcm1hbGl6ZUNhdGVnb3J5ID0gKHZhbHVlKSA9PiAoRE9DUkVBREVSX0NBVEVHT1JJRVMuaW5jbHVkZXModmFsdWUpID8gdmFsdWUgOiAnb3RoZXInKTsKCmV4cG9ydCBmdW5jdGlvbiBkb2NSZWFkZXJVcGxvYWRFbmFibGVkKG9wdHMsIGVudiwgY29uZmlnVmFsdWVzKSB7CiAgaWYgKG9wdHNbJ25vLXVwbG9hZCddKSByZXR1cm4gZmFsc2U7CiAgaWYgKG9wdHMudXBsb2FkKSByZXR1cm4gdHJ1ZTsKICBjb25zdCByYXcgPSBlbnYuQU1fRE9DUkVBREVSX1VQTE9BRDsKICBpZiAocmF3ICE9PSB1bmRlZmluZWQgJiYgcmF3ICE9PSAnJykgcmV0dXJuICFbJzAnLCAnb2ZmJywgJ2ZhbHNlJywgJ25vJ10uaW5jbHVkZXMoU3RyaW5nKHJhdykudHJpbSgpLnRvTG93ZXJDYXNlKCkpOwogIHJldHVybiBjb25maWdWYWx1ZXM/LmRvY3JlYWRlcl91cGxvYWQgIT09IGZhbHNlOwp9CgovLyBUaGUgZGF0YSBkaXJlY3RvcnksIHJlc29sdmVkIGZyb20gdGhlIGluamVjdGVkIGVudiBvbmx5IChBTV9IT01FLCBlbHNlCi8vICRIT01FLy5hbnN3ZXItbWUtd2l0aC1odG1sKSwgc28gYSBzeW50aGV0aWMgdGVzdCBlbnYgc3RheXMgaW5lcnQuCmV4cG9ydCBmdW5jdGlvbiBkb2NSZWFkZXJIb21lKGVudikgewogIGlmIChlbnYuQU1fSE9NRSkgcmV0dXJuIGVudi5BTV9IT01FOwogIHJldHVybiBlbnYuSE9NRSA/IGpvaW4oZW52LkhPTUUsICcuYW5zd2VyLW1lLXdpdGgtaHRtbCcpIDogbnVsbDsKfQoKLy8gVGhlIGV4dGVybmFsIGNyZWRlbnRpYWwgYWRhcHRlcjogQU1fRE9DUkVBREVSX0FEQVBURVIgd2luczsgb3RoZXJ3aXNlIHRoZQovLyBjb252ZW50aW9uYWwgJEFNX0hPTUUvYWRhcHRlcnMvZG9jcmVhZGVyIHdoZW4gdGhhdCBmaWxlIGV4aXN0cy4KZXhwb3J0IGZ1bmN0aW9uIGZpbmREb2NSZWFkZXJBZGFwdGVyKGVudikgewogIGlmIChlbnYuQU1fRE9DUkVBREVSX0FEQVBURVIpIHJldHVybiBlbnYuQU1fRE9DUkVBREVSX0FEQVBURVI7CiAgY29uc3QgaG9tZSA9IGRvY1JlYWRlckhvbWUoZW52KTsKICBpZiAoIWhvbWUpIHJldHVybiBudWxsOwogIGNvbnN0IGNhbmRpZGF0ZSA9IGpvaW4oaG9tZSwgJ2FkYXB0ZXJzJywgJ2RvY3JlYWRlcicpOwogIHJldHVybiBleGlzdHNTeW5jKGNhbmRpZGF0ZSkgPyBjYW5kaWRhdGUgOiBudWxsOwp9CgovLyBSdW5zIHRoZSBhZGFwdGVyIGFuZCByZXR1cm5zIHsgaGVhZGVycyB9IG9yIHsgc2tpcCB9LiBUaHJvd3Mgb24gYSBicm9rZW4KLy8gYWRhcHRlciAobm9uLXplcm8gZXhpdCwgYmFkIEpTT04sIG5vIHVzYWJsZSBoZWFkZXIpIHNvIHRoZSBmYWlsdXJlIGlzCi8vIHJlcG9ydGVkIGluc3RlYWQgb2Ygc2lsZW50bHkgc2VuZGluZyBhbiB1bmF1dGhlbnRpY2F0ZWQgcmVxdWVzdC4KZXhwb3J0IGZ1bmN0aW9uIHJ1bkRvY1JlYWRlckFkYXB0ZXIoYWRhcHRlciwgZW52LCBiYXNlKSB7CiAgY29uc3QgaG9zdCA9IG5ldyBVUkwoYmFzZSkuaG9zdG5hbWU7CiAgY29uc3QgcnVuID0gc3Bhd25TeW5jKGFkYXB0ZXIsIFtdLCB7CiAgICBpbnB1dDogSlNPTi5zdHJpbmdpZnkoeyBiYXNlLCBob3N0IH0pLAogICAgZW5jb2Rpbmc6ICd1dGY4JywKICAgIHRpbWVvdXQ6IDE1XzAwMCwKICAgIGVudiwKICB9KTsKICBpZiAocnVuLmVycm9yKSB0aHJvdyBuZXcgRXJyb3IoYGNhbm5vdCBydW4gdGhlIERvY1JlYWRlciBhZGFwdGVyICR7YWRhcHRlcn06ICR7cnVuLmVycm9yLm1lc3NhZ2V9YCk7CiAgaWYgKHJ1bi5zdGF0dXMgIT09IDApIHsKICAgIHRocm93IG5ldyBFcnJvcihgRG9jUmVhZGVyIGFkYXB0ZXIgJHthZGFwdGVyfSBmYWlsZWQ6ICR7KHJ1bi5zdGRlcnIgfHwgJycpLnRyaW0oKS5zbGljZSgtMzAwKSB8fCBgZXhpdCAke3J1bi5zdGF0dXN9YH1gKTsKICB9CiAgbGV0IHBhcnNlZDsKICB0cnkgewogICAgcGFyc2VkID0gSlNPTi5wYXJzZShTdHJpbmcocnVuLnN0ZG91dCkudHJpbSgpKTsKICB9IGNhdGNoIHsKICAgIHRocm93IG5ldyBFcnJvcihgRG9jUmVhZGVyIGFkYXB0ZXIgJHthZGFwdGVyfSBkaWQgbm90IHByaW50IGEgSlNPTiBvYmplY3RgKTsKICB9CiAgaWYgKHBhcnNlZD8uc2tpcCkgcmV0dXJuIHsgc2tpcDogU3RyaW5nKHBhcnNlZC5za2lwKSB9OwogIGNvbnN0IGhlYWRlcnMgPSBwYXJzZWQ/LmhlYWRlcnM7CiAgaWYgKCFoZWFkZXJzIHx8IHR5cGVvZiBoZWFkZXJzICE9PSAnb2JqZWN0JyB8fCBBcnJheS5pc0FycmF5KGhlYWRlcnMpKSB7CiAgICB0aHJvdyBuZXcgRXJyb3IoYERvY1JlYWRlciBhZGFwdGVyICR7YWRhcHRlcn0gcHJpbnRlZCBubyAiaGVhZGVycyIgb2JqZWN0YCk7CiAgfQogIGNvbnN0IGVudHJpZXMgPSBPYmplY3QuZW50cmllcyhoZWFkZXJzKS5maWx0ZXIoKFtrLCB2XSkgPT4gSEVBREVSX05BTUUudGVzdChrKSAmJiB0eXBlb2YgdiA9PT0gJ3N0cmluZycgJiYgdiAhPT0gJycpOwogIGlmICghZW50cmllcy5sZW5ndGgpIHRocm93IG5ldyBFcnJvcihgRG9jUmVhZGVyIGFkYXB0ZXIgJHthZGFwdGVyfSByZXR1cm5lZCBubyB1c2FibGUgaGVhZGVyYCk7CiAgcmV0dXJuIHsgaGVhZGVyczogT2JqZWN0LmZyb21FbnRyaWVzKGVudHJpZXMpIH07Cn0KCi8vIFdoZXJlIHRoZSBhdXRoIGhlYWRlcnMgY29tZSBmcm9tOiB0aGUgZW52IGtleSwgYW4gZXh0ZXJuYWwgYWRhcHRlciwgb3IKLy8gbm90aGluZyAoeyBza2lwIH0pIHdoZW4gdGhpcyBlbnZpcm9ubWVudCBwcm92aWRlcyBubyBjcmVkZW50aWFsIGF0IGFsbC4KZXhwb3J0IGZ1bmN0aW9uIHJlc29sdmVEb2NSZWFkZXJBdXRoKGVudiwgYmFzZSkgewogIGNvbnN0IGtleSA9IGVudi5ET0NfUkVBREVSX0FQSV9LRVk7CiAgaWYgKGtleSkgcmV0dXJuIHsgaGVhZGVyczogeyAnWC1BUEktS2V5Jzoga2V5IH0sIHZpYTogJ2VudicgfTsKICBjb25zdCBhZGFwdGVyID0gZmluZERvY1JlYWRlckFkYXB0ZXIoZW52KTsKICBpZiAoYWRhcHRlcikgewogICAgY29uc3QgciA9IHJ1bkRvY1JlYWRlckFkYXB0ZXIoYWRhcHRlciwgZW52LCBiYXNlKTsKICAgIGlmIChyLnNraXApIHJldHVybiB7IHNraXA6IHIuc2tpcCB9OwogICAgcmV0dXJuIHsgaGVhZGVyczogci5oZWFkZXJzLCB2aWE6ICdhZGFwdGVyJyB9OwogIH0KICByZXR1cm4geyBza2lwOiAnbm8gRE9DX1JFQURFUl9BUElfS0VZIGluIHRoZSBlbnZpcm9ubWVudCBhbmQgbm8gRG9jUmVhZGVyIGFkYXB0ZXIgZm91bmQgKEFNX0RPQ1JFQURFUl9BREFQVEVSIG9yICRBTV9IT01FL2FkYXB0ZXJzL2RvY3JlYWRlciknIH07Cn0KCi8vIFVwbG9hZHMgb25lIHJlbmRlcmVkIHBhZ2UuIFJldHVybnMgeyBzdGF0dXMsIGlkLCB1cmwsIHZpYSB9IG9uIHN1Y2Nlc3MsCi8vIHsgc2tpcHBlZDogcmVhc29uIH0gd2hlbiBubyBjcmVkZW50aWFsIGlzIGNvbmZpZ3VyZWQsIGFuZCB0aHJvd3Mgb24gYSByZWFsCi8vIGZhaWx1cmUgKHRoZSBjYWxsZXIgcmVwb3J0cyBpdCBhbmQga2VlcHMgdGhlIHJlbmRlciByZXN1bHQpLgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gdXBsb2FkVG9Eb2NSZWFkZXIoeyBodG1sLCB0aXRsZSwgY2F0ZWdvcnksIGV4dGVybmFsSWQgfSwgZW52LCBmZXRjaEltcGwgPSBmZXRjaCkgewogIGNvbnN0IGJhc2UgPSBkb2NSZWFkZXJCYXNlKGVudik7CiAgY29uc3QgYXV0aCA9IHJlc29sdmVEb2NSZWFkZXJBdXRoKGVudiwgYmFzZSk7CiAgaWYgKGF1dGguc2tpcCkgcmV0dXJuIHsgc2tpcHBlZDogYXV0aC5za2lwIH07CiAgY29uc3QgcGF5bG9hZCA9IHsgdGl0bGUsIGh0bWwsIGNhdGVnb3J5IH07CiAgaWYgKGV4dGVybmFsSWQpIHBheWxvYWQuZXh0ZXJuYWxJZCA9IGV4dGVybmFsSWQ7CiAgbGV0IHJlczsKICB0cnkgewogICAgcmVzID0gYXdhaXQgZmV0Y2hJbXBsKGAke2Jhc2V9L2FwaS9haS9kb2NzYCwgewogICAgICBtZXRob2Q6ICdQT1NUJywKICAgICAgaGVhZGVyczogeyAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nLCAnVXNlci1BZ2VudCc6IEJST1dTRVJfVUEsIC4uLmF1dGguaGVhZGVycyB9LAogICAgICBib2R5OiBKU09OLnN0cmluZ2lmeShwYXlsb2FkKSwKICAgICAgc2lnbmFsOiBBYm9ydFNpZ25hbC50aW1lb3V0KDMwXzAwMCksCiAgICB9KTsKICB9IGNhdGNoIChlKSB7CiAgICB0aHJvdyBuZXcgRXJyb3IoYGNhbm5vdCByZWFjaCAke2Jhc2V9OiAke2UubWVzc2FnZX1gKTsKICB9CiAgY29uc3QgdGV4dCA9IGF3YWl0IHJlcy50ZXh0KCk7CiAgaWYgKCFyZXMub2spIHRocm93IG5ldyBFcnJvcihgSFRUUCAke3Jlcy5zdGF0dXN9ICR7dGV4dC5zbGljZSgwLCAzMDApfWApOwogIGxldCBib2R5OwogIHRyeSB7CiAgICBib2R5ID0gSlNPTi5wYXJzZSh0ZXh0KTsKICB9IGNhdGNoIHsKICAgIHRocm93IG5ldyBFcnJvcihgdW5leHBlY3RlZCByZXBseSBmcm9tICR7YmFzZX06ICR7dGV4dC5zbGljZSgwLCAyMDApfWApOwogIH0KICBjb25zdCBpZCA9IGJvZHk/LmRvYz8uaWQ7CiAgaWYgKCFpZCkgdGhyb3cgbmV3IEVycm9yKGB0aGUgcmVwbHkgZnJvbSAke2Jhc2V9IGNhcnJpZXMgbm8gZG9jIGlkYCk7CiAgcmV0dXJuIHsgc3RhdHVzOiBib2R5LnN0YXR1cyA/PyAnY3JlYXRlZCcsIGlkLCB1cmw6IGAke2Jhc2V9LyMvZG9jLyR7aWR9YCwgdmlhOiBhdXRoLnZpYSB9Owp9Cg==
+// DocReader auto-upload — a feature of this fork (joesaas/answer-me-with-html).
+//
+// After `am render` writes a page, the page is uploaded to the user's DocReader
+// server (Agent 101) through the AI API that joesaas/doc-reader exposes
+// (POST /api/ai/docs — see that repo's docs/AI_API.md).
+//
+// The core stays runtime-agnostic: it knows the DocReader API, but it does NOT
+// know where credentials live. Credentials come from a pluggable adapter, so the
+// same skill works in Muse, Gemini, Grok Bot, or any other agent container:
+//
+//   1. Built-in env adapter: DOC_READER_API_KEY is sent as the X-API-Key header.
+//   2. External adapter: an executable that prints the auth headers as JSON.
+//      Found via AM_DOCREADER_ADAPTER, or at $AM_HOME/adapters/docreader.
+//      Protocol (see skills/answer-me-with-html/adapters/README.md):
+//        stdin:  {"base": "https://agent101.uk", "host": "agent101.uk"}
+//        stdout: {"headers": {"X-API-Key": "..."}}  — or {"skip": "reason"}
+//      An adapter for Muse ships in adapters/muse.py (it returns the
+//      custom.agent101 connector surrogate; Sentinel swaps in the real key).
+// With neither, the upload is skipped and the render still succeeds.
+//
+// Switches: `am config set docreader_upload off`, AM_DOCREADER_UPLOAD=0, or
+// --no-upload for one run; --upload forces one run even when the config is off.
+// Target: DOC_READER_BASE (default https://agent101.uk). Category: --category,
+// the draft's `category:` frontmatter, DOC_READER_CATEGORY, else "other".
+// A stable external id (frontmatter `external_id:` or --external-id) makes a
+// re-render replace the same document instead of creating a new one.
+
+import { existsSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { join } from 'node:path';
+
+export const DOCREADER_CATEGORIES = Object.freeze([
+  'agent', 'defi', 'blockchain', 'protocol', 'security', 'network', 'engineering', 'other',
+]);
+
+// Cloudflare in front of the DocReader server 403s non-browser user agents
+// (verified 2026-10-10: python-urllib's default UA was rejected), so send a browser UA.
+const BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
+
+const HEADER_NAME = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;
+
+export const docReaderBase = (env) => String(env.DOC_READER_BASE || 'https://agent101.uk').replace(/\/+$/, '');
+
+export const normalizeCategory = (value) => (DOCREADER_CATEGORIES.includes(value) ? value : 'other');
+
+export function docReaderUploadEnabled(opts, env, configValues) {
+  if (opts['no-upload']) return false;
+  if (opts.upload) return true;
+  const raw = env.AM_DOCREADER_UPLOAD;
+  if (raw !== undefined && raw !== '') return !['0', 'off', 'false', 'no'].includes(String(raw).trim().toLowerCase());
+  return configValues?.docreader_upload !== false;
+}
+
+// The data directory, resolved from the injected env only (AM_HOME, else
+// $HOME/.answer-me-with-html), so a synthetic test env stays inert.
+export function docReaderHome(env) {
+  if (env.AM_HOME) return env.AM_HOME;
+  return env.HOME ? join(env.HOME, '.answer-me-with-html') : null;
+}
+
+// The external credential adapter: AM_DOCREADER_ADAPTER wins; otherwise the
+// conventional $AM_HOME/adapters/docreader when that file exists.
+export function findDocReaderAdapter(env) {
+  if (env.AM_DOCREADER_ADAPTER) return env.AM_DOCREADER_ADAPTER;
+  const home = docReaderHome(env);
+  if (!home) return null;
+  const candidate = join(home, 'adapters', 'docreader');
+  return existsSync(candidate) ? candidate : null;
+}
+
+// Runs the adapter and returns { headers } or { skip }. Throws on a broken
+// adapter (non-zero exit, bad JSON, no usable header) so the failure is
+// reported instead of silently sending an unauthenticated request.
+export function runDocReaderAdapter(adapter, env, base) {
+  const host = new URL(base).hostname;
+  const run = spawnSync(adapter, [], {
+    input: JSON.stringify({ base, host }),
+    encoding: 'utf8',
+    timeout: 15_000,
+    env,
+  });
+  if (run.error) throw new Error(`cannot run the DocReader adapter ${adapter}: ${run.error.message}`);
+  if (run.status !== 0) {
+    throw new Error(`DocReader adapter ${adapter} failed: ${(run.stderr || '').trim().slice(-300) || `exit ${run.status}`}`);
+  }
+  let parsed;
+  try {
+    parsed = JSON.parse(String(run.stdout).trim());
+  } catch {
+    throw new Error(`DocReader adapter ${adapter} did not print a JSON object`);
+  }
+  if (parsed?.skip) return { skip: String(parsed.skip) };
+  const headers = parsed?.headers;
+  if (!headers || typeof headers !== 'object' || Array.isArray(headers)) {
+    throw new Error(`DocReader adapter ${adapter} printed no "headers" object`);
+  }
+  const entries = Object.entries(headers).filter(([k, v]) => HEADER_NAME.test(k) && typeof v === 'string' && v !== '');
+  if (!entries.length) throw new Error(`DocReader adapter ${adapter} returned no usable header`);
+  return { headers: Object.fromEntries(entries) };
+}
+
+// Where the auth headers come from: the env key, an external adapter, or
+// nothing ({ skip }) when this environment provides no credential at all.
+export function resolveDocReaderAuth(env, base) {
+  const key = env.DOC_READER_API_KEY;
+  if (key) return { headers: { 'X-API-Key': key }, via: 'env' };
+  const adapter = findDocReaderAdapter(env);
+  if (adapter) {
+    const r = runDocReaderAdapter(adapter, env, base);
+    if (r.skip) return { skip: r.skip };
+    return { headers: r.headers, via: 'adapter' };
+  }
+  return { skip: 'no DOC_READER_API_KEY in the environment and no DocReader adapter found (AM_DOCREADER_ADAPTER or $AM_HOME/adapters/docreader)' };
+}
+
+// Uploads one rendered page. Returns { status, id, url, via } on success,
+// { skipped: reason } when no credential is configured, and throws on a real
+// failure (the caller reports it and keeps the render result).
+export async function uploadToDocReader({ html, title, category, externalId }, env, fetchImpl = fetch) {
+  const base = docReaderBase(env);
+  const auth = resolveDocReaderAuth(env, base);
+  if (auth.skip) return { skipped: auth.skip };
+  const payload = { title, html, category };
+  if (externalId) payload.externalId = externalId;
+  let res;
+  try {
+    res = await fetchImpl(`${base}/api/ai/docs`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'User-Agent': BROWSER_UA, ...auth.headers },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(30_000),
+    });
+  } catch (e) {
+    throw new Error(`cannot reach ${base}: ${e.message}`);
+  }
+  const text = await res.text();
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${text.slice(0, 300)}`);
+  let body;
+  try {
+    body = JSON.parse(text);
+  } catch {
+    throw new Error(`unexpected reply from ${base}: ${text.slice(0, 200)}`);
+  }
+  const id = body?.doc?.id;
+  if (!id) throw new Error(`the reply from ${base} carries no doc id`);
+  return { status: body.status ?? 'created', id, url: `${base}/#/doc/${id}`, via: auth.via };
+}
