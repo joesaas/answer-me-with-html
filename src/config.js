@@ -21,6 +21,7 @@ export const CONFIG_KEYS = Object.freeze({
   style: { type: 'enum', choices: CHOICES.style, default: '80', label: 'STE writing-check strictness' },
   update_check: { type: 'bool', default: true, label: 'Check for a new version once a week in the background and tell you (never updates by itself)' },
   close_after_reply: { type: 'bool', default: false, label: 'Close the page tab 3 seconds after the reply is copied (a Keep open button cancels it)' },
+  docreader_upload: { type: 'bool', default: true, label: 'Upload each rendered page to your DocReader server (agent101.uk) after rendering — this fork adds this; needs DOC_READER_API_KEY or the doc-reader-upload CLI, and is skipped silently when neither is set' },
   voice: { type: 'enum', choices: VOICES, default: 'auto', label: 'Video narration voice-over (auto: ElevenLabs if ELEVENLABS_API_KEY is set, otherwise system TTS; local: the local service at AM_TTS_URL)' },
 });
 
